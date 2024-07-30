@@ -1,0 +1,4 @@
+export const config = {
+  baseUrl: import.meta.env.BASE_URL,
+  apiUrl: 'https://www.conamat.edu.pe/api/wp-json/wp/v2',
+};
