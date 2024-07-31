@@ -1,4 +1,5 @@
 import { Container, MainLogo } from '@/components/atoms';
+import { SocialMediaMenu } from '../socialmedia-menu/SocialMediaMenu';
 import './header.scss';
 
 export function Header() {
@@ -7,7 +8,7 @@ export function Header() {
       <Container>
         <div className='header-top'>
           <MainLogo></MainLogo>
-          <div>[SOCIAL-MEDIA-MENU]</div>
+          <SocialMediaMenu></SocialMediaMenu>
         </div>
         <div>[MAIN-MENU]</div>
       </Container>
