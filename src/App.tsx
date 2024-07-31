@@ -1,7 +1,9 @@
+import { MainRoutes } from '@/routes';
+
 export function App() {
-    return (
-      <div>
-        Conamat
-      </div>
-    );
-  }
+  return (
+    <div>
+      <MainRoutes />
+    </div>
+  );
+}
