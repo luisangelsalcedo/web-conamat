@@ -19,7 +19,7 @@ export interface Acf {
   id_youttube_video: string;
 }
 
-export interface ItemMenu {
+export interface MenuItem {
   id: number;
   label: string;
   href: string;
@@ -30,7 +30,7 @@ export interface ItemMenu {
   className: string;
 }
 
-export interface ItemMenuApi {
+export interface MenuItemApi {
   id: number;
   name: string;
   slug: string;

@@ -1,6 +1,6 @@
-import type { ItemMenu, ItemMenuApi } from '@/types';
+import type { MenuItem, MenuItemApi } from '@/types';
 
-export const itemMenuApiToItemMenu = (data: ItemMenuApi): ItemMenu => ({
+export const menuItemApiToMenuItem = (data: MenuItemApi): MenuItem => ({
   id: data.id,
   label: data.name,
   slug: data.slug,
@@ -11,10 +11,10 @@ export const itemMenuApiToItemMenu = (data: ItemMenuApi): ItemMenu => ({
   className: data.acf.css_class,
 });
 
-export const ItemMenuApiListToItemMenuList = (
-  list: ItemMenuApi[]
-): ItemMenu[] =>
+export const MenuItemApiListToMenuItemList = (
+  list: MenuItemApi[]
+): MenuItem[] =>
   list
-    .map(item => itemMenuApiToItemMenu(item))
+    .map(item => menuItemApiToMenuItem(item))
     .filter(item => item.active)
     .toSorted((a, b) => a.sort - b.sort);
