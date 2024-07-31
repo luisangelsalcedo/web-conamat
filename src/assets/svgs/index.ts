@@ -1,0 +1,24 @@
+export { default as Logo } from './logo_conamat_2023.svg?react';
+export { default as Isotipo } from './isotipo_conamat.svg?react';
+export { default as Titlebar } from './title-bar.svg?react';
+export { default as IconBtnMenu } from './iconBtnMenu.svg?react';
+export { default as ImageIcon } from './image-icon.svg?react';
+export { default as ArrowLeft } from './arrow-left.svg?react';
+export { default as ArrowRight } from './arrow-right.svg?react';
+export { default as WarningIcon } from './warning-icon.svg?react';
+export { default as CalIcon } from './cal-icon.svg?react';
+export { default as PhoneIcon } from './icono_telefono_fijo.svg?react';
+export { default as MailIcon } from './icono_email.svg?react';
+export { default as DownloadImage } from './icono_de_descarga.svg?react';
+export { default as WassIcon } from './icono_whatsapp.svg?react';
+export { default as GalleryIcon } from './gallery-icon.svg?react';
+
+export { default as FacebookIcon } from './logo_facebook.svg';
+export { default as YoutubeIcon } from './icono_youtube.svg';
+export { default as WhatsappIcon } from './icono_whatsapp.svg';
+export { default as LogoCesarVallejo } from './logo_cesar_vallejo.svg';
+export { default as LogoMas60 } from './logo_mas_de_60.svg';
+export { default as LogoAduni } from './logo_aduni.svg';
+export { default as LogoUch } from './logo_uch.svg';
+export { default as LogoCbb } from './logo_cbb.svg';
+export { default as LogoLumbreras } from './logo_lumbreras.svg';
