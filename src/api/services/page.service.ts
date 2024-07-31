@@ -1,6 +1,6 @@
 import { Page } from '@/types';
 import { config } from '@/config';
-import { pageApiListToPageList } from '@/adapters';
+import { pageApiListToPageList } from '@/api/adapters';
 
 const endpoint = `${config.apiUrl}/pages?_fields=id,title,slug,content,excerpt,status,menuitems,menu_order,acf`;
 

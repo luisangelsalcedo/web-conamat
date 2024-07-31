@@ -1,7 +1,7 @@
 import { Slider, SliderApi } from '@/types';
 import { config } from '@/config';
-import { sliderApiToSlider } from '@/adapters';
-import { serviceGetMedia } from './Media.service';
+import { sliderApiToSlider } from '@/api/adapters';
+import { serviceGetMedia } from './media.service';
 
 const endpoint = `${config.apiUrl}/sliders?_fields=id,title,featured_media,status,acf`;
 

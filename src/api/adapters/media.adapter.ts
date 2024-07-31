@@ -1,4 +1,4 @@
-import type { Media, MediaApi } from '../types';
+import type { Media, MediaApi } from '@/types';
 
 export const mediaApiToMedia = (data: MediaApi): Media => ({
   id: data.id,

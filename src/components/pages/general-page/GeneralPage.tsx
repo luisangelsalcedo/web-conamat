@@ -2,9 +2,9 @@ import { Page } from '@/types';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import parse from 'html-react-parser';
-import { useMenuItem, usePages } from '@/hooks';
+import { useMenuItem, usePages } from '@/store/hooks';
 import { GenralPageSkeleton } from './GeneralPageSkeleton';
-import { PageLayout } from '@/layout';
+import { PageLayout } from '@/layouts';
 import { Container } from '@/components/atoms';
 import { config } from '@/config';
 

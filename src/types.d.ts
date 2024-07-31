@@ -112,3 +112,30 @@ export interface SliderApi {
   featured_media: number;
   acf: Acf;
 }
+// * ----------------------------------------- BlogItem
+export interface BlogItem {
+  id: number;
+  title: string;
+  slug: string;
+  mediaId: number;
+  status: string;
+  content: string;
+  excerpt: string;
+  image?: Media;
+  categories?: number[];
+  sort: number;
+  publicationDate: string;
+  className: string;
+  highlight: boolean;
+}
+export interface BlogItemApi {
+  id: number;
+  slug: string;
+  status: string;
+  title: GUID;
+  content: GUID;
+  excerpt: GUID;
+  featured_media: number;
+  categories: number[];
+  acf: Acf;
+}

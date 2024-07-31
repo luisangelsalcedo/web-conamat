@@ -1,6 +1,6 @@
 import { atom } from 'jotai';
 import { Page } from '@/types';
-import { serviceGetAllPages } from '@/services';
+import { serviceGetAllPages } from '@/api/services';
 
 interface PageState {
   data: Page[];

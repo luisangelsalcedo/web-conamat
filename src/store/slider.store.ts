@@ -1,6 +1,6 @@
 import { atom } from 'jotai';
 import { Slider } from '@/types';
-import { serviceGetAllSliders } from '@/services';
+import { serviceGetAllSliders } from '@/api/services';
 
 interface SliderState {
   data: Slider[];

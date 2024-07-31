@@ -1,6 +1,6 @@
 import { Media } from '@/types';
 import { config } from '@/config';
-import { mediaApiToMedia } from '@/adapters';
+import { mediaApiToMedia } from '@/api/adapters';
 
 const endpoint = (id: number) =>
   `${config.apiUrl}/media/${id}?_fields=id,title,guid,media_details`;

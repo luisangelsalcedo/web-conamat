@@ -1,6 +1,6 @@
 import { MenuItem } from '@/types';
 import { config } from '@/config';
-import { MenuItemApiListToMenuItemList } from '@/adapters';
+import { MenuItemApiListToMenuItemList } from '@/api/adapters';
 
 const endpoint = `${config.apiUrl}/menuitems?_fields=id,name,slug,acf`;
 

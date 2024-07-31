@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { config } from '@/config';
-import { MainLayout } from '@/layout';
+import { MainLayout } from '@/layouts';
 import {
   AssesmentsPage,
   AssesmentsPageDetail,
@@ -12,7 +12,7 @@ import {
   NewsPageDetail,
   NofoundPage,
   VideosPage,
-} from '@/pages';
+} from '@/components/pages';
 
 export function MainRoutes() {
   return (

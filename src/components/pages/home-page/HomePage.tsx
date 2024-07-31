@@ -1,4 +1,4 @@
-import { useSlider } from '@/hooks';
+import { useSlider } from '@/store/hooks';
 import { Container } from '@/components/atoms';
 import { Slider } from '@/components/molecules';
 import './home-page.scss';

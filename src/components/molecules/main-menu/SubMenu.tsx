@@ -1,5 +1,5 @@
 import { config } from '@/config';
-import { usePages } from '@/hooks';
+import { usePages } from '@/store/hooks';
 import type { MenuItem } from '@/types';
 import { Link, useLocation } from 'react-router-dom';
 

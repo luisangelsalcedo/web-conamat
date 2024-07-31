@@ -1,6 +1,6 @@
 import { atom } from 'jotai';
 import { MenuItem } from '@/types';
-import { serviceGetAllMenuItem } from '@/services';
+import { serviceGetAllMenuItem } from '@/api/services';
 
 interface MenuItemState {
   data: MenuItem[];
