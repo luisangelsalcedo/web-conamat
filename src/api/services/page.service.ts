@@ -1,12 +1,10 @@
 import { Page } from '@/types';
-import { config } from '@/config';
 import { pageApiListToPageList } from '@/api/adapters';
-
-const endpoint = `${config.apiUrl}/pages?_fields=id,title,slug,content,excerpt,status,menuitems,menu_order,acf`;
+import { endpoints } from './serviceEndpoints';
 
 export function serviceGetAllPages() {
   return new Promise<Page[]>((resolve, reject) => {
-    fetch(endpoint)
+    fetch(endpoints.page.GETALL)
       .then(response => response.ok && response.json())
       .then(data => resolve(pageApiListToPageList(data)))
       .catch(() =>

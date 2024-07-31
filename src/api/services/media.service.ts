@@ -1,13 +1,10 @@
 import { Media } from '@/types';
-import { config } from '@/config';
 import { mediaApiToMedia } from '@/api/adapters';
-
-const endpoint = (id: number) =>
-  `${config.apiUrl}/media/${id}?_fields=id,title,guid,media_details`;
+import { endpoints } from './serviceEndpoints';
 
 export function serviceGetMedia(id: number) {
   return new Promise<Media>((resolve, reject) => {
-    fetch(endpoint(id))
+    fetch(endpoints.media.GETBYID(id))
       .then(response => response.ok && response.json())
       .then(data => resolve(mediaApiToMedia(data)))
       .catch(() =>

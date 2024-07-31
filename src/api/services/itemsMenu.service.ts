@@ -1,12 +1,10 @@
 import { MenuItem } from '@/types';
-import { config } from '@/config';
 import { MenuItemApiListToMenuItemList } from '@/api/adapters';
-
-const endpoint = `${config.apiUrl}/menuitems?_fields=id,name,slug,acf`;
+import { endpoints } from './serviceEndpoints';
 
 export function serviceGetAllMenuItem() {
   return new Promise<MenuItem[]>((resolve, reject) => {
-    fetch(endpoint)
+    fetch(endpoints.menuItems.GETALL)
       .then(response => response.ok && response.json())
       .then(data => resolve(MenuItemApiListToMenuItemList(data)))
       .catch(() =>
