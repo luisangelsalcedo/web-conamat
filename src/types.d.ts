@@ -31,11 +31,21 @@ export interface Sizes {
   large?: Full;
   full?: Full;
 }
+export interface MediaDetails {
+  sizes: Sizes;
+}
+// * ----------------------------------------- Media
 export interface Media {
   id: number | string;
   src: string;
   title: string;
   sizes: Sizes;
+}
+export interface MediaApi {
+  id: number;
+  guid: GUID;
+  title: GUID;
+  media_details: MediaDetails;
 }
 
 // * ----------------------------------------- MenuItem
