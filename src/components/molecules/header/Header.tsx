@@ -1,8 +1,12 @@
 import { Container, MainLogo } from '@/components/atoms';
 import { SocialMediaMenu } from '../socialmedia-menu/SocialMediaMenu';
+import { MainMenu } from '../main-menu/MainMenu';
+import { useMenuItem } from '@/hooks';
 import './header.scss';
 
 export function Header() {
+  const { menuItems } = useMenuItem();
+
   return (
     <header className='header'>
       <Container>
@@ -10,7 +14,7 @@ export function Header() {
           <MainLogo></MainLogo>
           <SocialMediaMenu></SocialMediaMenu>
         </div>
-        <div>[MAIN-MENU]</div>
+        <MainMenu items={menuItems.data} isLoading={menuItems.isLoading} />
       </Container>
     </header>
   );

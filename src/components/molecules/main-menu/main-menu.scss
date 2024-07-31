@@ -1,0 +1,179 @@
+@import "@/assets/scss/vars.scss";
+
+.main-menu{
+    
+   button{
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    border: 0;
+    outline: none;
+    background-color: white;
+    padding: 1em;
+    border-radius: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover{
+        background-color: rgba($color: $gray, $alpha: .1);
+    }
+
+    svg{
+        width: 20px;
+        height: 20px;
+    }
+
+    @media (min-width:700px) {
+        display: none;
+    }
+
+   }
+    &.show > ul{
+        right: auto;
+        max-width: 100%;
+
+        li{
+            opacity: 1;
+        }
+    }
+    
+    @media (max-width:700px) {
+        &.show > span{
+            position: fixed;
+            inset: 0;
+            margin: auto;
+            background-color: rgba($color: black, $alpha: .2);
+            backdrop-filter: blur(2px);
+            z-index: 5;
+        }
+    }
+    
+    & > ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        text-align: initial;
+
+        background-color: white;
+        position: fixed;
+        z-index: 10;
+        inset:  0 auto 0 0;
+        font-size: 1.3em;
+        box-shadow: 0 0 2em rgba($color: $default, $alpha: .3);
+
+        overflow: hidden;
+        transition: max-width .3s ease;
+        max-width: 0;
+
+        @media (min-width:700px) {
+            max-width: 100%;
+            background-color: transparent;
+            box-shadow: none;
+            position:static;
+            flex-direction: row;
+            inset:  0;
+            font-size: .9em;
+            width: 100%;
+            max-width: 100%;
+            overflow: visible;
+            transition: max-width .3s ease;
+            align-items: center;
+        }
+        
+        @media (min-width:800px) {
+            font-size: 1em;    
+        }
+
+        & > li{
+            list-style: none;
+            text-transform: uppercase;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            
+            color: $gray;
+            border-bottom: solid 1px rgba($color: $gray, $alpha: .2);
+            width: 100%;
+            padding: .7em 2em;
+            opacity: 0;
+            transition: opacity .3s ease;
+            border-left: solid 7px $primary;
+
+            &:first-child{
+                border-color: transparent;
+                padding-top: 0;
+
+                svg{
+                   width: 100px;
+                    .isost0{
+                        fill: $primary;
+                    }
+                }
+                @media (min-width:700px) {
+                    display: none;
+                }
+            }
+
+            &:last-child{
+                border-left: solid 7px $secondary;
+            }
+
+            @media (min-width:700px) {
+                opacity: 1;
+                border-bottom: 0;
+                padding: 1em 1.3em;
+                width: auto;
+                position: relative;
+                height: 20px;
+                display: flex;
+                align-items: center;
+
+                &:hover > nav > ul {
+                    max-height: 300px;
+                }
+
+                ul{
+                    position: absolute;
+                    background-color: white;
+                    width: 100%;
+                    top: 3.3em;
+                    left: 0;
+                    z-index: 15;
+                    overflow: hidden;
+                    transition: max-height .3s ease;
+                    max-height: 0;
+                    box-shadow: 0 1.2em 1em rgba($color: $gray, $alpha: .3);
+
+                    li{
+                        border-bottom: solid 1px rgba($color: $secondary, $alpha: .1);
+                    }
+                    
+                    a{
+                        padding: .9em;
+                    } 
+                }
+            }
+            
+            a{
+                color: inherit;
+                display: block;
+                padding: .4em;
+            } 
+            a:hover{
+                color: $primary;
+                
+            }             
+        }
+    }
+    
+}
+
+.submenu{ 
+    a{
+        color: inherit;
+        font-size: .8em;
+        font-family: 'Rubik', sans-serif;
+        font-weight: normal;
+    }
+}
