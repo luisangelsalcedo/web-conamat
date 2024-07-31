@@ -1,29 +1,35 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { config } from '@/config';
 import { MainLayout } from '@/layout';
+import {
+  AssesmentsPage,
+  AssesmentsPageDetail,
+  GalleriesPage,
+  GalleriesPageDetail,
+  GeneralPage,
+  HomePage,
+  NewsPage,
+  NewsPageDetail,
+  NofoundPage,
+  VideosPage,
+} from '@/pages';
 
 export function MainRoutes() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path={config.baseUrl} element={<MainLayout />}>
-          <Route index element={<>Home Page</>} />
-          <Route path=':menuSlug/:pageSlug' element={<>General Page</>} />
-          <Route path='noticias' element={<>News Page</>} />
-          <Route path='blog/:id/:slug' element={<>New Page Details</>} />
-          <Route path='videos' element={<>Videos Page</>} />
-          <Route path='galerias' element={<>Galleries Page</>} />
-          <Route
-            path='galerias/:id/:slug'
-            element={<>Gallery Page Details</>}
-          />
-          <Route path='examenes' element={<>Assesments Page</>} />
-          <Route
-            path='examenes/:id/:slug'
-            element={<>Assesment Page Details</>}
-          />
+          <Route index element={<HomePage />} />
+          <Route path=':menuSlug/:pageSlug' element={<GeneralPage />} />
+          <Route path='noticias' element={<NewsPage />} />
+          <Route path='blog/:id/:slug' element={<NewsPageDetail />} />
+          <Route path='videos' element={<VideosPage />} />
+          <Route path='galerias' element={<GalleriesPage />} />
+          <Route path='galerias/:id/:slug' element={<GalleriesPageDetail />} />
+          <Route path='examenes' element={<AssesmentsPage />} />
+          <Route path='examenes/:id/:slug' element={<AssesmentsPageDetail />} />
         </Route>
-        <Route path='*' element={<>No Found Page</>}></Route>
+        <Route path='*' element={<NofoundPage />}></Route>
       </Routes>
     </BrowserRouter>
   );

@@ -1,0 +1,10 @@
+export { HomePage } from './home-page/HomePage';
+export { GeneralPage } from './general-page/GeneralPage';
+export { AssesmentsPage } from './assesments-page/AssesmentsPage';
+export { AssesmentsPageDetail } from './assesments-page/AssesmentsPageDetail';
+export { GalleriesPage } from './galleries-page/GalleriesPage';
+export { GalleriesPageDetail } from './galleries-page/GalleriesPageDetail';
+export { NewsPage } from './news-page/NewsPage';
+export { NewsPageDetail } from './news-page/NewsPageDetails';
+export { VideosPage } from './videos-page/VideosPage';
+export { NofoundPage } from './nofound-page/NofoundPage';
