@@ -1,4 +1,4 @@
-import { Header } from '@/components/molecules';
+import { Footer, Header } from '@/components/molecules';
 import { Outlet } from 'react-router-dom';
 import './main-layout.scss';
 
@@ -10,6 +10,8 @@ export function MainLayout() {
       <section>
         <Outlet />
       </section>
+
+      <Footer />
     </div>
   );
 }

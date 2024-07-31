@@ -1,0 +1,89 @@
+@import "@/assets/scss/vars.scss";
+
+.footer{
+    &-auspiciadores{
+        background-color: white;
+        margin-top: 2em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+
+        h2{
+            font-family: 'Oswald', sans-serif;
+            color: $gray;
+            font-size: 1em;
+            text-align: center;
+            margin-bottom: 2em;
+        }
+
+        ul{            
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1em;
+        }
+
+        img{
+            height: 3.5em;
+        }
+    }
+    &-direcciones{
+        background-color: $primary;
+        padding-top: 2em;
+        margin-bottom: 2em;
+        color: antiquewhite;
+
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 2em;
+
+            @media (min-width: 766px) {
+                justify-content: space-between;
+            }
+
+            & > div:nth-child(3){
+                text-align: center;
+            }
+        }
+
+
+        a{ 
+            color: inherit;
+            display: flex;
+            align-items: center;
+            
+            &:hover{
+                text-decoration: underline;
+                text-underline-offset: 5px;
+                color: inherit;
+            }
+
+            svg{
+                width: 2em;
+                margin-right: 1em;
+                height: auto;
+            }
+        }
+
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: .5em;
+
+            a{
+                font-weight: bold;
+                font-size: 1em;
+            }
+        }
+
+        svg{
+            height: 100px;
+        }
+
+        p > a{
+            font-size: .8em;
+        }
+    }
+}
