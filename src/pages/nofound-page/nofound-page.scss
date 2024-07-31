@@ -1,3 +1,21 @@
+@import "@/assets/scss/vars.scss";
+
 .nofound-page{
-    
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+
+    .logotipo{
+        width: 10rem;
+    }
+
+    h1{
+        color: $secondary;
+    }
+
 }
