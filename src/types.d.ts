@@ -21,6 +21,22 @@ export interface Acf {
 export interface GUID {
   rendered: string;
 }
+export interface Full {
+  source_url: string;
+}
+export interface Sizes {
+  thumbnail?: Full;
+  medium?: Full;
+  medium_large?: Full;
+  large?: Full;
+  full?: Full;
+}
+export interface Media {
+  id: number | string;
+  src: string;
+  title: string;
+  sizes: Sizes;
+}
 
 // * ----------------------------------------- MenuItem
 export interface MenuItem {
@@ -63,5 +79,26 @@ export interface PageApi {
   excerpt: GUID;
   menu_order: number;
   menuitems: number[];
+  acf: Acf;
+}
+
+// * ----------------------------------------- Slider
+export interface Slider {
+  id: number;
+  title: string;
+  status: string;
+  href: string;
+  target: string;
+  sort: number;
+  mediaId: number;
+  mediaIdMobile: number;
+  image?: Media;
+  mobileImage?: Media;
+}
+export interface SliderApi {
+  id: number;
+  status: string;
+  title: GUID;
+  featured_media: number;
   acf: Acf;
 }
