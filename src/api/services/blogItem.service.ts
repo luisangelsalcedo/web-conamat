@@ -3,7 +3,7 @@ import { blogItemApiToBlogItem } from '../adapters';
 import { serviceGetMedia } from './media.service';
 import { endpoints } from './serviceEndpoints';
 
-export async function serviceGetAllPost(page: number = 1) {
+export async function serviceGetAllBlogItem(page: number = 1) {
   try {
     const response = await fetch(endpoints.blogItem.GETALL(page));
 
