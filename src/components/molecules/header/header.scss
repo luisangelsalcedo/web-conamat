@@ -12,15 +12,15 @@
         }
     }
 
-    .logo-component{
-        margin: 2rem 0;
+    .main-logo{
+        margin: 2em 0;
         
         @media (min-width:700px) {
             font-size: 1.2em;
         }
         
     }
-    .socialmedia-menu-component{
+    .socialmedia-menu{
         @media (min-width:700px) {
             font-size: 1em;
         }
