@@ -1,5 +1,14 @@
+import { useSlider } from '@/hooks';
+import { Container } from '@/components/atoms';
+import { Slider } from '@/components/molecules';
 import './home-page.scss';
 
 export function HomePage() {
-  return <div>HomePage</div>;
+  const { sliders } = useSlider();
+  return (
+    <div className='home-page'>
+      <Slider sliders={sliders.data} isLoading={sliders.isLoading} />
+      <Container>Blocks</Container>
+    </div>
+  );
 }
