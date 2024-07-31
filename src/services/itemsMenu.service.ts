@@ -9,6 +9,11 @@ export function serviceGetAllMenuItem() {
     fetch(endpoint)
       .then(response => response.ok && response.json())
       .then(data => resolve(MenuItemApiListToMenuItemList(data)))
-      .catch(error => reject(error));
+      .catch(() =>
+        reject({
+          status: 400,
+          message: 'badRequest',
+        })
+      );
   });
 }
