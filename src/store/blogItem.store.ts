@@ -11,7 +11,7 @@ interface blogItemState {
 }
 const blogItemInit: blogItemState = {
   data: [],
-  isLoading: false,
+  isLoading: true,
   currentPage: 1,
 };
 
