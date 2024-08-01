@@ -1,1 +1,27 @@
-.news-page{}
+.blog-page{
+    .skeleton{
+        &-item{
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+
+            &-image{
+                width: 150px;
+                height: 150px;
+            }
+            &-content{
+                flex: 1;
+
+                &-title{
+                    height: 45px;
+                    margin-bottom: .5rem;
+                }
+                &-text{
+                    span{
+                        margin-bottom: 7px;
+                    }
+                }
+            }
+        }
+    }
+}
