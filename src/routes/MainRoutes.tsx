@@ -8,8 +8,8 @@ import {
   GalleriesPageDetail,
   GeneralPage,
   HomePage,
-  NewsPage,
-  NewsPageDetail,
+  BlogPage,
+  BlogPageDetail,
   NofoundPage,
   VideosPage,
 } from '@/components/pages';
@@ -21,8 +21,8 @@ export function MainRoutes() {
         <Route path={config.baseUrl} element={<MainLayout />}>
           <Route index element={<HomePage />} />
           <Route path=':menuSlug/:pageSlug' element={<GeneralPage />} />
-          <Route path='noticias' element={<NewsPage />} />
-          <Route path='blog/:id/:slug' element={<NewsPageDetail />} />
+          <Route path='noticias' element={<BlogPage />} />
+          <Route path='blog/:id/:slug' element={<BlogPageDetail />} />
           <Route path='videos' element={<VideosPage />} />
           <Route path='galerias' element={<GalleriesPage />} />
           <Route path='galerias/:id/:slug' element={<GalleriesPageDetail />} />
