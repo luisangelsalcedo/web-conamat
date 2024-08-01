@@ -1,0 +1,19 @@
+@import "@/assets/scss/vars.scss";
+
+.empty-elements{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5em 0;
+    
+    svg{
+        width: 3em;
+        height: 3em;
+        opacity: .5;
+    }
+
+    span{
+        padding: 1em;
+    }
+}

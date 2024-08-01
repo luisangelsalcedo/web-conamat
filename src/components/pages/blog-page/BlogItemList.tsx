@@ -1,4 +1,4 @@
-import { BlogItemSmall } from '@/components/molecules';
+import { BlogItemSmall, EmptyElements } from '@/components/molecules';
 import { BlogItem } from '@/types';
 
 interface Props {
@@ -8,9 +8,11 @@ interface Props {
 export function BlogItemList({ data }: Props) {
   return (
     <div>
-      {data && data.length <= 0
-        ? 'Empty elements'
-        : data.map(item => <BlogItemSmall data={item} key={item.id} />)}
+      {data && data.length <= 0 ? (
+        <EmptyElements />
+      ) : (
+        data.map(item => <BlogItemSmall data={item} key={item.id} />)
+      )}
     </div>
   );
 }
