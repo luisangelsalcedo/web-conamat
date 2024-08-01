@@ -1,0 +1,19 @@
+@import "@/assets/scss/vars.scss";
+
+$color: rgba($color: $primary, $alpha: .6);
+
+.date-component{
+    margin-bottom: .5rem;
+    color: $color;
+    display: flex;
+    align-items: center;
+
+    svg{
+        margin-right: .5rem;
+        transform: scale(.8);
+
+        path{
+            fill: $color;
+        }
+    }
+}
