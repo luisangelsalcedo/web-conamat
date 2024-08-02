@@ -11,7 +11,7 @@ interface blogItemState {
 }
 const blogItemInit: blogItemState = {
   data: [],
-  isLoading: true,
+  isLoading: false,
   currentPage: 1,
 };
 
@@ -21,6 +21,8 @@ export const getBlogItemsAtom = atom(
   async (get, set, page: number = 1) => {
     const state = get(blogItemAtom);
     let tempState = { ...state };
+
+    set(blogItemAtom, { ...state, isLoading: true });
 
     try {
       const data = await serviceGetAllBlogItem(page);
@@ -38,6 +40,8 @@ export const getBlogItemAtom = atom(
   async (get, set, id: number) => {
     const state = get(blogItemAtom);
     let tempState = { ...state };
+
+    set(blogItemAtom, { ...state, isLoading: true });
 
     try {
       const data = await serviceGetBlogItemById(id);

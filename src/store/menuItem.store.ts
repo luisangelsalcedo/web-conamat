@@ -10,7 +10,7 @@ interface MenuItemState {
 
 const menuItemsInit: MenuItemState = {
   data: [],
-  isLoading: true,
+  isLoading: false,
 };
 
 export const menuItemsAtom = atom(menuItemsInit);
@@ -19,6 +19,8 @@ export const getMenuitemsAtom = atom(
   async (get, set) => {
     const state = get(menuItemsAtom);
     let tempState = { ...state };
+
+    set(menuItemsAtom, { ...state, isLoading: true });
 
     try {
       const data = await serviceGetAllMenuItem();

@@ -9,7 +9,7 @@ interface SliderState {
 }
 const slidersInit: SliderState = {
   data: [],
-  isLoading: true,
+  isLoading: false,
 };
 
 export const slidersAtom = atom(slidersInit);
@@ -18,6 +18,8 @@ export const getSlidersAtom = atom(
   async (get, set) => {
     const state = get(slidersAtom);
     let tempState = { ...state };
+
+    set(slidersAtom, { ...state, isLoading: true });
 
     try {
       const data = await serviceGetAllSliders();

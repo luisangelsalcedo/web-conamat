@@ -9,7 +9,7 @@ interface PageState {
 }
 const pagesInit: PageState = {
   data: [],
-  isLoading: true,
+  isLoading: false,
 };
 
 export const pagesAtom = atom(pagesInit);
@@ -18,6 +18,8 @@ export const getPagesAtom = atom(
   async (get, set) => {
     const state = get(pagesAtom);
     let tempState = { ...state };
+
+    set(pagesAtom, { ...state, isLoading: true });
 
     try {
       const data = await serviceGetAllPages();
