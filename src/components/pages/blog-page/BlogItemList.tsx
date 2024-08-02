@@ -3,16 +3,17 @@ import { BlogItem } from '@/types';
 
 interface Props {
   data: BlogItem[];
+  loadComplete?: boolean;
 }
 
-export function BlogItemList({ data }: Props) {
+export function BlogItemList({ data, loadComplete = true }: Props) {
   return (
-    <div>
-      {data && data.length <= 0 ? (
+    <>
+      {loadComplete && data.length <= 0 ? (
         <EmptyElements />
       ) : (
         data.map(item => <BlogItemSmall data={item} key={item.id} />)
       )}
-    </div>
+    </>
   );
 }
