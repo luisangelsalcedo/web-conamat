@@ -1,6 +1,7 @@
-import { MenuItemApi } from '@/types';
+import { MenuItemApi, Page, PagesGroups } from '@/types';
 import { menuItemApiListToMenuItemList } from '@/api/adapters';
 import { getEndpoint } from './serviceEndpoints';
+import { serviceGetAllPages } from './page.service';
 
 export async function serviceGetAllMenuItem() {
   try {
@@ -16,10 +17,31 @@ export async function serviceGetAllMenuItem() {
   }
 }
 
-// export async function serciveGetBySlug(slug: string) {
-//   try {
-//     fetch(endpoints.menuItems.)
-//   } catch (error) {
+export async function serviceGetAllMenuItemsWithPage() {
+  try {
+    const menuItems = await serviceGetAllMenuItem();
+    const pages = await serviceGetAllPages();
 
-//   }
-// }
+    // pages group by menuItems
+    const pagesGroups: PagesGroups = pages.reduce(
+      (prev: PagesGroups, current: Page) => {
+        const { menuitem } = current;
+        return {
+          ...prev,
+
+          [String(menuitem)]: prev[String(menuitem)]
+            ? [...prev[String(menuitem)], current]
+            : [current],
+        };
+      },
+      {}
+    );
+
+    return menuItems.map(item => ({
+      menu: item,
+      submenu: pagesGroups[item.id] || [],
+    }));
+  } catch (error) {
+    throw new Error('error');
+  }
+}
