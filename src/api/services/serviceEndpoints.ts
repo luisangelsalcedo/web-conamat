@@ -5,7 +5,7 @@ const base = config.apiUrl;
 interface GetEndpoint {
   (
     key: 'menuitems' | 'sliders' | 'posts' | 'pages' | 'media',
-    config: { id?: number; slug?: string; page?: number }
+    config?: { id?: number; slug?: string; page?: number }
   ): string;
 }
 
