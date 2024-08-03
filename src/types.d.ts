@@ -37,12 +37,14 @@ export interface MediaDetails {
 // * ----------------------------------------- Media
 export interface Media {
   id: number | string;
+  slug: string;
   src: string;
   title: string;
   sizes: Sizes;
 }
 export interface MediaApi {
   id: number;
+  slug: string;
   guid: GUID;
   title: GUID;
   media_details: MediaDetails;
@@ -51,29 +53,28 @@ export interface MediaApi {
 // * ----------------------------------------- MenuItem
 export interface MenuItem {
   id: number;
+  slug: string;
   label: string;
   href: string;
   active: boolean;
   target: string;
-  slug: string;
   sort: number;
   className: string;
 }
 export interface MenuItemApi {
   id: number;
-  name: string;
   slug: string;
   acf: Acf;
+  name: string;
 }
 
 // * ----------------------------------------- Page
 export interface Page {
   id: number;
-  title: string;
   slug: string;
+  title: string;
   content: string;
   excerpt: string;
-  status: string;
   menuitem: number[];
   sort: number;
   className: string;
@@ -83,20 +84,19 @@ export interface Page {
 export interface PageApi {
   id: number;
   slug: string;
-  status: string;
+  acf: Acf;
   title: GUID;
   content: GUID;
   excerpt: GUID;
   menu_order: number;
   menuitems: number[];
-  acf: Acf;
 }
 
 // * ----------------------------------------- Slider
 export interface Slider {
   id: number;
+  slug: string;
   title: string;
-  status: string;
   href: string;
   target: string;
   sort: number;
@@ -107,18 +107,17 @@ export interface Slider {
 }
 export interface SliderApi {
   id: number;
-  status: string;
+  slug: string;
+  acf: Acf;
   title: GUID;
   featured_media: number;
-  acf: Acf;
 }
 // * ----------------------------------------- BlogItem
 export interface BlogItem {
   id: number;
-  title: string;
   slug: string;
+  title: string;
   mediaId: number;
-  status: string;
   content: string;
   excerpt: string;
   image?: Media;
@@ -131,11 +130,10 @@ export interface BlogItem {
 export interface BlogItemApi {
   id: number;
   slug: string;
-  status: string;
+  acf: Acf;
   title: GUID;
   content: GUID;
   excerpt: GUID;
   featured_media: number;
   categories: number[];
-  acf: Acf;
 }
