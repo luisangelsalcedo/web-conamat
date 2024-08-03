@@ -11,7 +11,7 @@ export const menuItemApiToMenuItem = (data: MenuItemApi): MenuItem => ({
   className: data.acf.css_class,
 });
 
-export const MenuItemApiListToMenuItemList = (
+export const menuItemApiListToMenuItemList = (
   list: MenuItemApi[]
 ): MenuItem[] =>
   list

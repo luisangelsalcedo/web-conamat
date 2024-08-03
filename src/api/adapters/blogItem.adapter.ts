@@ -2,10 +2,9 @@ import type { BlogItem, BlogItemApi } from '@/types';
 
 export const blogItemApiToBlogItem = (data: BlogItemApi): BlogItem => ({
   id: data.id,
-  title: data.title.rendered,
   slug: data.slug,
+  title: data.title.rendered,
   mediaId: data.acf.main_image,
-  status: data.status,
   content: data.content.rendered,
   excerpt: data.excerpt.rendered,
   sort: data.acf.sort,
@@ -19,5 +18,4 @@ export const blogItemApiListToBlogItemList = (
 ): BlogItem[] =>
   list
     .map(item => blogItemApiToBlogItem(item))
-    .filter(item => item.status === 'publish')
     .toSorted((a, b) => a.sort - b.sort);
