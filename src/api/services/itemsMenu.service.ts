@@ -1,4 +1,4 @@
-import { MenuItemApi, Page, PagesGroups } from '@/types';
+import { MenuItemApi, MenuItemsWithPages, Page, PagesGroups } from '@/types';
 import { menuItemApiListToMenuItemList } from '@/api/adapters';
 import { getEndpoint } from './serviceEndpoints';
 import { serviceGetAllPages } from './page.service';
@@ -17,7 +17,9 @@ export async function serviceGetAllMenuItem() {
   }
 }
 
-export async function serviceGetAllMenuItemsWithPage() {
+export async function serviceGetAllMenuItemsWithPage(): Promise<
+  MenuItemsWithPages[]
+> {
   try {
     const menuItems = await serviceGetAllMenuItem();
     const pages = await serviceGetAllPages();

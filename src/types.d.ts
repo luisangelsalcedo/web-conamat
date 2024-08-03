@@ -38,6 +38,11 @@ export interface MediaDetails {
 export interface PagesGroups {
   [key: string]: Page[];
 }
+
+export interface MenuItemsWithPages {
+  menu: MenuItem;
+  submenu: Page[];
+}
 // * ----------------------------------------- Media
 export interface Media {
   id: number | string;
