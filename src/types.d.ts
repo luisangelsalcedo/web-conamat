@@ -34,6 +34,10 @@ export interface Sizes {
 export interface MediaDetails {
   sizes: Sizes;
 }
+
+export interface PagesGroups {
+  [key: string]: Page[];
+}
 // * ----------------------------------------- Media
 export interface Media {
   id: number | string;
