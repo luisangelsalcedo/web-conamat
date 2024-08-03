@@ -1,34 +1,28 @@
+import type { Page } from '@/types';
 import { config } from '@/config';
-import { usePages } from '@/store/hooks';
-import type { MenuItem } from '@/types';
 import { Link, useLocation } from 'react-router-dom';
 
 interface Props {
-  item: MenuItem;
+  items: Page[];
+  parentSlug: string;
   handle: () => void;
 }
 
-export function SubMenu({ item, handle }: Props) {
-  const { pages } = usePages();
-
-  const submenu = pages.data
-    .filter(page => page.menuitem[0] === item.id)
-    .toSorted();
-
+export function SubMenu({ items, parentSlug, handle }: Props) {
   const location = useLocation();
   return (
     <nav className='submenu'>
       <ul>
-        {submenu.map(subItem => {
-          const href = `${config.baseUrl}${item.slug}/${subItem.slug}`;
+        {items.map(submenuItem => {
+          const href = `${config.baseUrl}${parentSlug}/${submenuItem.slug}`;
           return (
-            <li key={subItem.slug + subItem.id}>
+            <li key={submenuItem.slug + submenuItem.id}>
               <Link
                 to={href}
                 className={location.pathname === href ? 'hover' : ''}
                 onClick={handle}
               >
-                {subItem.title}
+                {submenuItem.title}
               </Link>
             </li>
           );

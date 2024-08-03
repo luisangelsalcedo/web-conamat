@@ -1,14 +1,14 @@
-import { useEffect } from 'react';
 import { useAtom, useSetAtom } from 'jotai';
-import { getMenuitemsAtom, menuItemsAtom } from '@/store';
+import {
+  getMenuitemsAtom,
+  getMenuitemsWithPagesAtom,
+  menuItemsAtom,
+} from '@/store';
 
 export function useMenuItem() {
   const [menuItems] = useAtom(menuItemsAtom);
   const getMenuitems = useSetAtom(getMenuitemsAtom);
+  const getMenuitemsWithPages = useSetAtom(getMenuitemsWithPagesAtom);
 
-  useEffect(() => {
-    !menuItems.data.length && getMenuitems();
-  }, []);
-
-  return { menuItems };
+  return { menuItems, getMenuitems, getMenuitemsWithPages };
 }
