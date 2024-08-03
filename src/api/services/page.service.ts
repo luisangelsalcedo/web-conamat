@@ -29,5 +29,3 @@ export async function serviceGetPageById(id: number) {
     throw new Error('badRequest');
   }
 }
-
-console.log(getEndpoint('pages'));
