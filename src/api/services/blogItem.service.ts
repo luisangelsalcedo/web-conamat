@@ -1,11 +1,11 @@
 import { BlogItem, BlogItemApi } from '@/types';
 import { blogItemApiToBlogItem } from '../adapters';
 import { serviceGetMedia } from './media.service';
-import { endpoints } from './serviceEndpoints';
+import { getEndpoint } from './serviceEndpoints';
 
 export async function serviceGetAllBlogItem(page: number = 1) {
   try {
-    const response = await fetch(endpoints.blogItem.GETALL(page));
+    const response = await fetch(getEndpoint('posts', { page }));
 
     if (response.ok) {
       const data = await response.json();
@@ -26,7 +26,7 @@ export async function serviceGetAllBlogItem(page: number = 1) {
 
 export async function serviceGetBlogItemById(id: number) {
   try {
-    const response = await fetch(endpoints.blogItem.GETBYID(id));
+    const response = await fetch(getEndpoint('posts', { id }));
     if (response.ok) {
       const data: BlogItemApi = await response.json();
       const post = blogItemApiToBlogItem(data);

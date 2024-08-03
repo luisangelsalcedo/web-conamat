@@ -1,11 +1,11 @@
 import { Slider, SliderApi } from '@/types';
 import { sliderApiToSlider } from '@/api/adapters';
 import { serviceGetMedia } from './media.service';
-import { endpoints } from './serviceEndpoints';
+import { getEndpoint } from './serviceEndpoints';
 
 export async function serviceGetAllSliders() {
   try {
-    const response = await fetch(endpoints.slider.GETALL);
+    const response = await fetch(getEndpoint('sliders'));
 
     if (response.ok) {
       const data: SliderApi[] = await response.json();
