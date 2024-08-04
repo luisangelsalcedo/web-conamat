@@ -1,16 +1,16 @@
 import { useAtom, useSetAtom } from 'jotai';
 import {
-  getPageByIdAtom,
-  getPageByIdSlugAtom,
-  getPagesAtom,
   pagesAtom,
+  getPagesAtom,
+  getPageByIdAtom,
+  getPageBySlugAtom,
 } from '@/store';
 
 export function usePages() {
   const [pages] = useAtom(pagesAtom);
   const getPages = useSetAtom(getPagesAtom);
   const getPageById = useSetAtom(getPageByIdAtom);
-  const getPageByIdSlug = useSetAtom(getPageByIdSlugAtom);
+  const getPageByIdSlug = useSetAtom(getPageBySlugAtom);
 
   return { pages, getPages, getPageById, getPageByIdSlug };
 }

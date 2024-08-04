@@ -56,7 +56,7 @@ export const getPageByIdAtom = atom(
   }
 );
 
-export const getPageByIdSlugAtom = atom(
+export const getPageBySlugAtom = atom(
   () => null,
   async (get, set, slug: string) => {
     const state = get(pagesAtom);
