@@ -1,0 +1,69 @@
+@import "@/assets/scss/vars.scss";
+
+.magic-image{
+
+    &-border{
+        .image{
+            border: solid .4em white;
+        }
+    }
+
+    svg{
+        position: absolute;
+        z-index: 5;
+        opacity: 0;
+        transition: opacity .2s ease;
+        width: 2em;
+        path{
+            fill: white;
+        }
+    }
+
+    .image{
+        
+        background-color: $bg-100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        overflow: hidden;
+        
+        box-shadow: 0 0 .5em rgba($color: $default, $alpha: .2);
+        position: relative;
+        
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        &-link{
+    
+            &::before{
+                content: ''; 
+                transition: background-color .3s ease, 
+                            backdrop-filter .3s ease;
+                position: absolute;
+                inset: 0;
+            }
+            
+            &:hover::before{
+                    font-size: .8em; 
+                    background-color: rgba($color: #000000, $alpha: .5);
+                    backdrop-filter: blur(2px);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    z-index: 5;
+            }
+            &:hover{
+                svg{
+                    opacity: 1;
+                }
+            }
+        }   
+        
+    }
+}
+
