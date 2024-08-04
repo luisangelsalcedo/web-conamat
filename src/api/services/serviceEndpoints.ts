@@ -51,7 +51,6 @@ export const getEndpoint: GetEndpoint = (key, config = {}): string => {
     endpoint = page ? `${endpoint}&page=${page}` : endpoint;
     endpoint = limit ? `${endpoint}&per_page=${limit}` : endpoint;
 
-    console.log(endpoint);
     return endpoint;
   }
   throw new Error('Endpoint no found');

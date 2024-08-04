@@ -32,6 +32,7 @@ export async function serviceGetPostById(id: number) {
       const post = postApiToPost(data);
       return uploadPostImage(post);
     }
+    throw config.errors.PAGENOFOUND;
   } catch (error) {
     throw error;
   }
@@ -47,6 +48,25 @@ export async function serviceGetPostBySlug(slug: string) {
       if (posts.length <= 0) throw config.errors.PAGENOFOUND;
       return uploadPostImage(posts[0]);
     }
+  } catch (error) {
+    throw error;
+  }
+}
+
+// * Temp function
+export async function serviceGetPostByIdAndSlug(id: number, slug: string) {
+  try {
+    const response = await fetch(getEndpoint('posts', { id }));
+    if (response.ok) {
+      const data: PostApi = await response.json();
+      const post = postApiToPost(data);
+
+      // * validate slug
+      if (post.slug !== slug) throw config.errors.PAGENOFOUND;
+
+      return uploadPostImage(post);
+    }
+    throw config.errors.PAGENOFOUND;
   } catch (error) {
     throw error;
   }

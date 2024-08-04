@@ -1,6 +1,11 @@
 import { atom } from 'jotai';
 import { Post } from '@/types';
-import { serviceGetAllPost, serviceGetPostById } from '@/api/services';
+import {
+  serviceGetAllPost,
+  serviceGetPostById,
+  serviceGetPostByIdAndSlug,
+  serviceGetPostBySlug,
+} from '@/api/services';
 
 interface postState {
   data: Post[];
@@ -26,7 +31,13 @@ export const getPostsAtom = atom(
 
     try {
       const data = await serviceGetAllPost(page);
-      tempState = { ...state, data, currentPage: page, error: undefined };
+      tempState = {
+        ...state,
+        data,
+        currentPage: page,
+        error: undefined,
+        post: undefined,
+      };
     } catch (error) {
       tempState = { ...state, error };
     } finally {
@@ -35,17 +46,55 @@ export const getPostsAtom = atom(
   }
 );
 
-export const getPostAtom = atom(
+export const getPostByIdAtom = atom(
   () => null,
   async (get, set, id: number) => {
     const state = get(postAtom);
     let tempState = { ...state };
 
-    set(postAtom, { ...state, isLoading: true });
+    !state.post && set(postAtom, { ...state, isLoading: true });
 
     try {
-      const data = await serviceGetPostById(id);
-      tempState = { ...state, post: data };
+      const post = await serviceGetPostById(id);
+      tempState = { ...state, post };
+    } catch (error) {
+      tempState = { ...state, error };
+    } finally {
+      set(postAtom, { ...tempState, isLoading: false });
+    }
+  }
+);
+
+export const getPostBySlugAtom = atom(
+  () => null,
+  async (get, set, slug: string) => {
+    const state = get(postAtom);
+    let tempState = { ...state };
+
+    !state.post && set(postAtom, { ...state, isLoading: true });
+
+    try {
+      const post = await serviceGetPostBySlug(slug);
+      tempState = { ...state, post };
+    } catch (error) {
+      tempState = { ...state, error };
+    } finally {
+      set(postAtom, { ...tempState, isLoading: false });
+    }
+  }
+);
+
+export const getPostByIdAndSlugAtom = atom(
+  () => null,
+  async (get, set, id: number, slug: string) => {
+    const state = get(postAtom);
+    let tempState = { ...state };
+
+    !state.post && set(postAtom, { ...state, isLoading: true });
+
+    try {
+      const post = await serviceGetPostByIdAndSlug(id, slug);
+      tempState = { ...state, post };
     } catch (error) {
       tempState = { ...state, error };
     } finally {
