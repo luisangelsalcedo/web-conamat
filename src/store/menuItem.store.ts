@@ -3,6 +3,7 @@ import { MenuItem, MenuItemsWithPages } from '@/types';
 import {
   serviceGetAllMenuItem,
   serviceGetAllMenuItemsWithPage,
+  serviceGetMenuItemBySlug,
 } from '@/api/services';
 
 interface MenuItemState {
@@ -10,6 +11,7 @@ interface MenuItemState {
   isLoading: boolean;
   error?: any;
   menuWithSubmenu?: MenuItemsWithPages[];
+  menuItem?: MenuItem;
 }
 
 const menuItemsInit: MenuItemState = {
@@ -30,6 +32,25 @@ export const getMenuitemsAtom = atom(
     try {
       const data = await serviceGetAllMenuItem();
       tempState = { ...state, data };
+    } catch (error) {
+      tempState = { ...state, error };
+    } finally {
+      set(menuItemsAtom, { ...tempState, isLoading: false });
+    }
+  }
+);
+
+export const getMenuItemByIdSlugAtom = atom(
+  () => null,
+  async (get, set, slug: string) => {
+    const state = get(menuItemsAtom);
+    let tempState = { ...state };
+
+    set(menuItemsAtom, { ...state, isLoading: true });
+
+    try {
+      const menuItem = await serviceGetMenuItemBySlug(slug); // return [{}]
+      tempState = { ...state, menuItem };
     } catch (error) {
       tempState = { ...state, error };
     } finally {

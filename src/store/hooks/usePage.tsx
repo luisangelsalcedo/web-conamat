@@ -1,14 +1,16 @@
-import { useEffect } from 'react';
 import { useAtom, useSetAtom } from 'jotai';
-import { getPagesAtom, pagesAtom } from '@/store';
+import {
+  getPageByIdAtom,
+  getPageByIdSlugAtom,
+  getPagesAtom,
+  pagesAtom,
+} from '@/store';
 
 export function usePages() {
   const [pages] = useAtom(pagesAtom);
   const getPages = useSetAtom(getPagesAtom);
+  const getPageById = useSetAtom(getPageByIdAtom);
+  const getPageByIdSlug = useSetAtom(getPageByIdSlugAtom);
 
-  useEffect(() => {
-    !pages.data.length && getPages();
-  }, []);
-
-  return { pages };
+  return { pages, getPages, getPageById, getPageByIdSlug };
 }
