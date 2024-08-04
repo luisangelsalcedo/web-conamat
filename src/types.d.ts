@@ -121,8 +121,8 @@ export interface SliderApi {
   title: GUID;
   featured_media: number;
 }
-// * ----------------------------------------- BlogItem
-export interface BlogItem {
+// * ----------------------------------------- Post
+export interface Post {
   id: number;
   slug: string;
   title: string;
@@ -136,7 +136,7 @@ export interface BlogItem {
   className: string;
   highlight: boolean;
 }
-export interface BlogItemApi {
+export interface PostApi {
   id: number;
   slug: string;
   acf: Acf;

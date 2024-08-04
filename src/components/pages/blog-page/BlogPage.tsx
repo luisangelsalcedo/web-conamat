@@ -1,31 +1,44 @@
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useBlogItem } from '@/store/hooks';
+import { usePost } from '@/store/hooks';
 import { PageLayout } from '@/layouts';
 import { Container } from '@/components/atoms';
-import { Paginator } from '@/components/molecules';
-import { BlogItemList } from './BlogItemList';
+import { EmptyElements, Paginator, PostSmall } from '@/components/molecules';
 import { BlogPageSkeleton } from './BlogPageSkeleton';
 import './blog-page.scss';
+import { config } from '@/config';
 
 export function BlogPage() {
+  const { posts, getPosts } = usePost();
+
   const { search } = useLocation();
   const query = new URLSearchParams(search);
-  const paramPage = query.get('page');
+  const paramPage = Number(query.get('page') ?? 1);
 
-  const { blogItems } = useBlogItem(Number(paramPage ?? 1));
+  useEffect(() => {
+    paramPage && getPosts(paramPage);
+  }, [paramPage]);
 
   return (
     <div className='blog-page'>
       <Container>
-        {blogItems.isLoading ? (
+        {posts.isLoading ? (
           <BlogPageSkeleton />
         ) : (
-          <PageLayout title='Noticias'>
+          <PageLayout title='Noticias' path='/ noticias'>
             <PageLayout.Header />
             <PageLayout.Body>
-              <BlogItemList data={blogItems.data} />
-              {!!blogItems.data.length && (
-                <Paginator currentPage={blogItems.currentPage}></Paginator>
+              {posts.error && posts.error === config.errors.EMPTYLIST ? (
+                <EmptyElements />
+              ) : (
+                <>
+                  {posts.data.map(item => (
+                    <PostSmall data={item} key={item.id} />
+                  ))}
+                  {!!posts.data.length && (
+                    <Paginator currentPage={posts.currentPage}></Paginator>
+                  )}
+                </>
               )}
             </PageLayout.Body>
           </PageLayout>
