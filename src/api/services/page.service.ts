@@ -1,6 +1,7 @@
 import { PageApi } from '@/types';
 import { pageApiListToPageList, pageApiToPage } from '@/api/adapters';
 import { getEndpoint } from './serviceEndpoints';
+import { config } from '@/config';
 
 export async function serviceGetAllPages() {
   try {
@@ -12,7 +13,7 @@ export async function serviceGetAllPages() {
     }
     return [];
   } catch (error) {
-    throw new Error('badRequest');
+    throw error;
   }
 }
 
@@ -26,6 +27,21 @@ export async function serviceGetPageById(id: number) {
       return page;
     }
   } catch (error) {
-    throw new Error('badRequest');
+    throw error;
+  }
+}
+
+export async function serviceGetPageBySlug(slug: string) {
+  try {
+    const response = await fetch(getEndpoint('pages', { slug }));
+
+    if (response.ok) {
+      const data: PageApi[] = await response.json();
+      const pages = pageApiListToPageList(data);
+      if (pages.length <= 0) throw config.errors.PAGENOFOUND;
+      return pages[0];
+    }
+  } catch (error) {
+    throw error;
   }
 }
