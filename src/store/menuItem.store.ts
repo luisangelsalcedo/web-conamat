@@ -46,15 +46,13 @@ export const getMenuItemByIdSlugAtom = atom(
     const state = get(menuItemsAtom);
     let tempState = { ...state };
 
-    set(menuItemsAtom, { ...state, isLoading: true });
-
     try {
       const menuItem = await serviceGetMenuItemBySlug(slug); // return [{}]
       tempState = { ...state, menuItem };
     } catch (error) {
       tempState = { ...state, error };
     } finally {
-      set(menuItemsAtom, { ...tempState, isLoading: false });
+      set(menuItemsAtom, { ...tempState });
     }
   }
 );

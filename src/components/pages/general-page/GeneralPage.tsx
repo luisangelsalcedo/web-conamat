@@ -1,5 +1,4 @@
-import { Page } from '@/types';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import parse from 'html-react-parser';
 import { useMenuItem, usePages } from '@/store/hooks';
@@ -12,25 +11,29 @@ export function GeneralPage() {
   const { menuSlug, pageSlug } = useParams();
   const navigate = useNavigate();
 
-  const { menuItems } = useMenuItem();
-  const { pages } = usePages();
-
-  const [page, setPage] = useState<Page>();
+  const { pages, getPageByIdSlug } = usePages();
+  const { menuItems, getMenuItemByIdSlug } = useMenuItem();
 
   useEffect(() => {
-    if (!pages.isLoading) {
-      const currentMenu = menuItems.data.find(item => item.slug === menuSlug);
-      const currentPage = pages.data.find(page => page.slug === pageSlug);
-      if (currentMenu && currentPage) {
-        setPage(currentPage);
-      } else {
-        navigate(config.nofoundUrl, { replace: false });
-      }
-    }
-  }, [pages.isLoading, menuSlug, pageSlug]);
+    menuSlug && getMenuItemByIdSlug(menuSlug);
+  }, [menuSlug]);
+
+  useEffect(() => {
+    pageSlug && getPageByIdSlug(pageSlug);
+  }, [pageSlug]);
+
+  // validation slug menu
+  useEffect(() => {
+    menuItems.error && navigate(config.nofoundUrl, { replace: false });
+  }, [menuItems]);
+
+  // validation slug page
+  useEffect(() => {
+    pages.error && navigate(config.nofoundUrl, { replace: false });
+  }, [pages]);
 
   const pagePath =
-    page?.href === '#' ? `/ ${menuSlug} / ${pageSlug}` : page?.href;
+    pages.page?.href === '#' ? `/ ${menuSlug} / ${pageSlug}` : pages.page?.href;
 
   return (
     <Container>
@@ -38,12 +41,12 @@ export function GeneralPage() {
         <GenralPageSkeleton />
       ) : (
         <PageLayout
-          className={page?.className ?? ''}
-          title={page?.title ?? ''}
+          className={pages.page?.className ?? ''}
+          title={pages.page?.title ?? ''}
           path={pagePath}
         >
           <PageLayout.Header />
-          <PageLayout.Body>{parse(page?.content ?? '')}</PageLayout.Body>
+          <PageLayout.Body>{parse(pages.page?.content ?? '')}</PageLayout.Body>
         </PageLayout>
       )}
     </Container>
