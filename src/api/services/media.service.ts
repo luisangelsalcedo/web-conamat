@@ -7,11 +7,8 @@ export function serviceGetMedia(id: number) {
     fetch(getEndpoint('media', { id }))
       .then(response => response.ok && response.json())
       .then(data => resolve(mediaApiToMedia(data)))
-      .catch(() =>
-        reject({
-          status: 400,
-          message: 'badRequest',
-        })
-      );
+      .catch(error => {
+        throw error;
+      });
   });
 }

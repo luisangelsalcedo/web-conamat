@@ -20,7 +20,7 @@ export async function serviceGetAllSliders() {
     }
     return [];
   } catch (error) {
-    throw new Error('badRequest');
+    throw error;
   }
 }
 

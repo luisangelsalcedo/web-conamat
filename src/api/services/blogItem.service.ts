@@ -20,7 +20,7 @@ export async function serviceGetAllBlogItem(page: number = 1) {
     }
     return [];
   } catch (error) {
-    throw new Error('badRequest');
+    throw error;
   }
 }
 
@@ -33,7 +33,7 @@ export async function serviceGetBlogItemById(id: number) {
       return uploadBlogItemImage(post);
     }
   } catch (error) {
-    throw new Error('badRequest');
+    throw error;
   }
 }
 
