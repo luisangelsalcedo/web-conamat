@@ -1,39 +1,20 @@
 import { Link } from 'react-router-dom';
-import { ImageIcon } from '@/assets/svgs';
-import parse from 'html-react-parser';
+import { Post } from '@/types';
 import { Date } from '@/components/atoms';
-import type { Post } from '@/types';
-import { config } from '@/config';
 import './post-small.scss';
 
 interface Props {
-  data: Post;
+  post: Post;
+  to: string;
 }
 
-export function PostSmall({ data }: Props) {
-  const href = String(`${config.baseUrl}blog/${data.id}/${data.slug}`);
-  const thumbnail = String(`${data?.image?.sizes?.thumbnail?.source_url}`);
-
+export function PostSmall({ post, to }: Props) {
   return (
     <div className='post-small'>
-      <div className='post-small-left'>
-        <Link to={href} className='post-small-image'>
-          {data?.image ? (
-            <img src={thumbnail} alt={data.title} />
-          ) : (
-            <div className='post-small-image-default'>
-              <ImageIcon />
-            </div>
-          )}
-        </Link>
-      </div>
-      <div className='post-small-right'>
-        <h3>
-          <Link to={href}>{data.title}</Link>
-        </h3>
-        {!!data?.publicationDate && <Date date={data?.publicationDate ?? ''} />}
-        <div className='post-small-description'>{parse(data.excerpt)}</div>
-      </div>
+      <h3>
+        <Link to={to}>{post.title}</Link>
+      </h3>
+      {!!post?.publicationDate && <Date date={post?.publicationDate ?? ''} />}
     </div>
   );
 }

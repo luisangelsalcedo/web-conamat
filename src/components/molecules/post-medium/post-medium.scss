@@ -1,0 +1,35 @@
+@import "@/assets/scss/vars.scss";
+
+.post-medium{
+    box-shadow: 0 .2em 0 rgba($color: $default, $alpha: .1);
+    background-color: white;
+    border-radius: 0 0 1em 1em;
+    display: flex;
+    padding: 1em .5em;
+    margin-bottom: 1em;
+    gap: 1em;
+    @media (min-width:600px) {
+        padding: 1em;     
+    }
+
+    &-left{
+        width:6em;
+        @media (min-width:600px) {
+            width: 150px;
+        }
+    }
+    &-right {
+        flex: 1;
+        font-size: .8em;
+        @media (min-width:600px) {
+            font-size: .9em;
+        }
+    }
+    
+    &-description {
+        display: none;
+        @media (min-width:600px) {
+            display: block;
+        }
+    }
+}

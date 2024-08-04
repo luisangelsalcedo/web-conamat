@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { usePost } from '@/store/hooks';
 import { PageLayout } from '@/layouts';
 import { Container } from '@/components/atoms';
-import { EmptyElements, Paginator, PostSmall } from '@/components/molecules';
+import { EmptyElements, Paginator, PostMedium } from '@/components/molecules';
 import { BlogPageSkeleton } from './BlogPageSkeleton';
 import './blog-page.scss';
 import { config } from '@/config';
@@ -33,7 +33,7 @@ export function BlogPage() {
               ) : (
                 <>
                   {posts.data.map(item => (
-                    <PostSmall data={item} key={item.id} />
+                    <PostMedium post={item} key={item.id} />
                   ))}
                   {!!posts.data.length && (
                     <Paginator currentPage={posts.currentPage}></Paginator>
