@@ -2,6 +2,7 @@ import { MenuItemApi, MenuItemsWithPages, Page, PagesGroups } from '@/types';
 import { menuItemApiListToMenuItemList } from '@/api/adapters';
 import { getEndpoint } from './serviceEndpoints';
 import { serviceGetAllPages } from './page.service';
+import { config } from '@/config';
 
 export async function serviceGetAllMenuItem() {
   try {
@@ -13,7 +14,22 @@ export async function serviceGetAllMenuItem() {
     }
     return [];
   } catch (error) {
-    throw new Error('badRequest');
+    throw error;
+  }
+}
+
+export async function serviceGetMenuItemBySlug(slug: string) {
+  try {
+    const response = await fetch(getEndpoint('menuitems', { slug }));
+
+    if (response.ok) {
+      const data: MenuItemApi[] = await response.json();
+      const pages = menuItemApiListToMenuItemList(data);
+      if (pages.length <= 0) throw config.errors.PAGENOFOUND;
+      return pages[0];
+    }
+  } catch (error) {
+    throw error;
   }
 }
 
@@ -44,6 +60,6 @@ export async function serviceGetAllMenuItemsWithPage(): Promise<
       submenu: pagesGroups[item.id] || [],
     }));
   } catch (error) {
-    throw new Error('error');
+    throw error;
   }
 }
