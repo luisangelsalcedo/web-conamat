@@ -4,21 +4,24 @@ import './paginator.scss';
 
 interface Props {
   currentPage: number;
+  limit: number;
+  count: number;
 }
 
-export function Paginator({ currentPage }: Props) {
+export function Paginator({ currentPage, count, limit }: Props) {
   return (
     <div className='paginator'>
-      <Link
-        to={currentPage > 1 ? `?page=${currentPage - 1}` : '#'}
-        className={currentPage === 1 ? 'disabled' : ''}
-      >
-        <ArrowLeft />
-      </Link>
+      {currentPage > 1 && (
+        <Link to={`?page=${currentPage - 1}`}>
+          <ArrowLeft />
+        </Link>
+      )}
       <span>{`0${currentPage}`.slice(-2)}</span>
-      <Link to={`?page=${currentPage + 1}`}>
-        <ArrowRight />
-      </Link>
+      {count >= limit && (
+        <Link to={`?page=${currentPage + 1}`}>
+          <ArrowRight />
+        </Link>
+      )}
     </div>
   );
 }
