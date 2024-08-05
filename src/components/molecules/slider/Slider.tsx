@@ -14,7 +14,11 @@ export function Slider({ sliders, isLoading }: Props) {
   return (
     <section id='banner' className='slider'>
       {isLoading ? (
-        <Skeleton variant='rounded' height={300} />
+        <Skeleton
+          variant='rounded'
+          height={300}
+          style={{ marginBottom: '4em' }}
+        />
       ) : (
         <Swiper
           className='mySwiper'
