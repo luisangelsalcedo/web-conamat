@@ -6,3 +6,5 @@ export { PostSmall } from './post-small/PostSmall';
 export { EmptyElements } from './empty-elements/EmptyElements';
 export { Paginator } from './paginator/Paginator';
 export { MagicImage } from './magic-image/MagicImage';
+export { StickyPostsBlock } from './sticky-posts-block/StickyPostsBlock';
+export { PostsSlider } from './posts-slider/PostsSlider';

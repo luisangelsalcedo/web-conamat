@@ -2,23 +2,22 @@
     .blocks{
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 1em;
+        width: 100%;
+        position: relative;
 
-        .download-icon{
-            width: 20em;
-            display: block;
-            position: relative;
-            margin: auto;
-            margin-top: 2rem;
-
-            &:hover .arrow{
-                fill:black;
-                transition: fill .3s ease;     
-            }
-        }
+       
 
         @media (min-width:700px) {
             flex-direction: row;
+
+            & > div:nth-child(1){
+                flex: 1;
+                width: 0;
+            }
+            & > div:nth-child(2){
+                width:20em;
+            }
         }
     }
 }
