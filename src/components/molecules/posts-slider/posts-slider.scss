@@ -1,0 +1,16 @@
+@import "@/assets/scss/vars.scss";
+
+.posts-slider{
+    box-shadow: 0 0 .5em rgba($color: $default, $alpha: .2);
+    margin-bottom: 1em;
+
+    .image{
+        height: 18em;
+        @media (min-width:700px) {
+            height: 14em;
+        }
+        @media (min-width:850px) {
+            height: 20em;
+        }
+    }
+}
