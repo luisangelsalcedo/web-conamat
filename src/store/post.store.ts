@@ -37,7 +37,7 @@ export const getPostsAtom = atom(
 
     try {
       const data = sticky
-        ? await serviceGetAllPostSticky(page)
+        ? await serviceGetAllPostSticky()
         : await serviceGetAllPost(page);
       tempState = {
         ...state,

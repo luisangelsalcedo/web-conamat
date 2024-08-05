@@ -24,10 +24,10 @@ export async function serviceGetAllPost(page: number = 1) {
   }
 }
 
-export async function serviceGetAllPostSticky(page: number = 1) {
+export async function serviceGetAllPostSticky() {
   try {
     const response = await fetch(
-      getEndpoint('posts', { page, limit: 10, sticky: true })
+      getEndpoint('posts', { limit: 100, sticky: true })
     );
     if (response.ok) {
       const data = await response.json();
