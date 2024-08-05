@@ -1,6 +1,5 @@
 import parse from 'html-react-parser';
 import type { Post } from '@/types';
-import { config } from '@/config';
 import { PostSmall } from '../post-small/PostSmall';
 import { MagicImage } from '@/components/molecules';
 import './post-medium.scss';
@@ -11,7 +10,6 @@ interface Props {
 }
 
 export function PostMedium({ post }: Props) {
-  const href = String(`${config.baseUrl}blog/${post.id}/${post.slug}`);
   const thumbnail = String(`${post?.image?.sizes?.thumbnail?.source_url}`);
 
   return (
@@ -21,14 +19,14 @@ export function PostMedium({ post }: Props) {
           <MagicImage
             src={thumbnail}
             title={post.title}
-            to={href}
+            to={post.href}
             border
             icon={<EyeIcon />}
           />
         )}
       </div>
       <div className='post-medium-right'>
-        <PostSmall post={post} to={href}></PostSmall>
+        <PostSmall post={post} to={post.href}></PostSmall>
         <div className='post-medium-description'>{parse(post.excerpt)}</div>
       </div>
     </div>

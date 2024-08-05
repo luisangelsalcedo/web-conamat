@@ -11,6 +11,7 @@ export const postApiToPost = (data: PostApi): Post => ({
   publicationDate: data.acf.publication_date,
   className: data.acf.css_class,
   highlight: data.acf.highlight,
+  href: `blog/${data.id}/${data.slug}`,
 });
 
 export const postApiListToPostList = (list: PostApi[]): Post[] =>

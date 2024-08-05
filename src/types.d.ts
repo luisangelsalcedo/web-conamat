@@ -135,6 +135,7 @@ export interface Post {
   publicationDate: string;
   className: string;
   highlight: boolean;
+  href: string;
 }
 export interface PostApi {
   id: number;
