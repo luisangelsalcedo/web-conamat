@@ -12,7 +12,6 @@ interface PropsImage {
 }
 
 function Image({ src, title, showTitle }: PropsImage) {
-  console.log(typeof src);
   return (
     <>
       {src !== 'undefined' ? (

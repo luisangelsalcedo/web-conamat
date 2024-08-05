@@ -1,0 +1,23 @@
+@import "@/assets/scss/vars.scss";
+
+.sticky-posts-block{
+    .post-small{
+        font-size: .8em;
+        margin-bottom: 1em;
+        border-bottom: solid 1px rgba($color: $default, $alpha: .2);
+    }
+
+    .skeleton{
+        &-main{
+            height: 300px;
+            margin-bottom: 1rem;
+        }
+        &-items{
+            span{
+                margin-bottom: 1rem;
+                height: 3rem;
+            }
+        }
+
+    }
+}
