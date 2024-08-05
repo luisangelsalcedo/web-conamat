@@ -24,6 +24,28 @@ export async function serviceGetAllPost(page: number = 1) {
   }
 }
 
+export async function serviceGetAllPostSticky(page: number = 1) {
+  try {
+    const response = await fetch(
+      getEndpoint('posts', { page, limit: 10, sticky: true })
+    );
+    if (response.ok) {
+      const data = await response.json();
+
+      const posts: Post[] = await Promise.all(
+        data.map(async (item: PostApi) => {
+          const post = postApiToPost(item);
+          return uploadPostImage(post);
+        })
+      );
+      return posts.toSorted((a, b) => a.sort - b.sort);
+    }
+    throw config.errors.EMPTYLIST;
+  } catch (error) {
+    throw error;
+  }
+}
+
 export async function serviceGetPostById(id: number) {
   try {
     const response = await fetch(getEndpoint('posts', { id }));

@@ -10,6 +10,7 @@ interface GetEndpoint {
       slug?: string;
       page?: number;
       limit?: number;
+      sticky?: boolean;
     }
   ): string;
 }
@@ -40,7 +41,7 @@ const params = {
 };
 
 export const getEndpoint: GetEndpoint = (key, config = {}): string => {
-  const { id, slug, page, limit = 100 } = config;
+  const { id, slug, page, limit = 100, sticky = false } = config;
 
   if (Object.keys(params).some(item => key === item)) {
     let endpoint = `${base}/${key}`;
@@ -50,6 +51,7 @@ export const getEndpoint: GetEndpoint = (key, config = {}): string => {
     endpoint = slug ? `${endpoint}&slug=${slug}` : endpoint;
     endpoint = page ? `${endpoint}&page=${page}` : endpoint;
     endpoint = limit ? `${endpoint}&per_page=${limit}` : endpoint;
+    endpoint = sticky ? `${endpoint}&sticky=${sticky}` : endpoint;
 
     return endpoint;
   }

@@ -2,6 +2,7 @@ import { atom } from 'jotai';
 import { Post } from '@/types';
 import {
   serviceGetAllPost,
+  serviceGetAllPostSticky,
   serviceGetPostById,
   serviceGetPostByIdAndSlug,
   serviceGetPostBySlug,
@@ -23,14 +24,21 @@ const postInit: postState = {
 export const postAtom = atom(postInit);
 export const getPostsAtom = atom(
   () => null,
-  async (get, set, page: number = 1) => {
+  async (
+    get,
+    set,
+    page: number = 1,
+    { sticky = false }: { sticky?: boolean } = {}
+  ) => {
     const state = get(postAtom);
     let tempState = { ...state };
 
     !state.data.length && set(postAtom, { ...state, isLoading: true });
 
     try {
-      const data = await serviceGetAllPost(page);
+      const data = sticky
+        ? await serviceGetAllPostSticky(page)
+        : await serviceGetAllPost(page);
       tempState = {
         ...state,
         data,
