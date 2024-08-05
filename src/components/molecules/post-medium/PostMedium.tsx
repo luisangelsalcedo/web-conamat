@@ -2,8 +2,8 @@ import parse from 'html-react-parser';
 import type { Post } from '@/types';
 import { PostSmall } from '../post-small/PostSmall';
 import { MagicImage } from '@/components/molecules';
-import './post-medium.scss';
 import { EyeIcon } from '@/assets/svgs';
+import './post-medium.scss';
 
 interface Props {
   post: Post;
@@ -15,15 +15,13 @@ export function PostMedium({ post }: Props) {
   return (
     <div className='post-medium'>
       <div className='post-medium-left'>
-        {post?.image && (
-          <MagicImage
-            src={thumbnail}
-            title={post.title}
-            to={post.href}
-            border
-            icon={<EyeIcon />}
-          />
-        )}
+        <MagicImage
+          src={thumbnail}
+          title={post.title}
+          to={post.href}
+          border
+          icon={<EyeIcon />}
+        />
       </div>
       <div className='post-medium-right'>
         <PostSmall post={post} to={post.href}></PostSmall>
