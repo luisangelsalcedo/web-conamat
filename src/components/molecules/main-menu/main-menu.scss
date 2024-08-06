@@ -98,7 +98,7 @@
             padding: .7em 2em;
             opacity: 0;
             transition: opacity .3s ease;
-            border-left: solid 7px $primary;
+            border-left: solid 5px $primary;
 
             &:first-child{
                 border-color: transparent;
@@ -116,7 +116,7 @@
             }
 
             &:last-child{
-                border-left: solid 7px $secondary;
+                border-left: solid 5px $secondary;
             }
 
             @media (min-width:700px) {
