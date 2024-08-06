@@ -8,3 +8,4 @@ export { Paginator } from './paginator/Paginator';
 export { MagicImage } from './magic-image/MagicImage';
 export { StickyPostsBlock } from './sticky-posts-block/StickyPostsBlock';
 export { PostsSlider } from './posts-slider/PostsSlider';
+export { HighlightVideosBlock } from './highlight-videos-block/HighlightVideosBlock';
