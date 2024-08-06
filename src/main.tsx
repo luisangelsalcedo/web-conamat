@@ -7,7 +7,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
-
+import '@fancyapps/ui/dist/fancybox.umd';
+import '@fancyapps/ui/dist/fancybox.css';
 import '@/assets/scss/global-styles.scss';
 
 createRoot(document.getElementById('root')!).render(
