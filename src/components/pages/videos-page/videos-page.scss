@@ -27,4 +27,29 @@
             }
         }
     }
+    .skeleton{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        
+        @media(min-width:650px){
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        span{
+            height: calc(11em + 10vw);
+            @media(min-width:500px){
+                height: calc(11em + 15vw);
+            }
+            @media(min-width:650px){
+                flex: 1;
+                width: calc(100%/2 - 1em/2);
+                height: calc(11em);
+            }
+            @media(min-width:850px){
+                width: calc(100%/3 - 2em/3);
+            }
+        }
+    }
 }

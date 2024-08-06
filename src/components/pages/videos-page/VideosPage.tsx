@@ -8,6 +8,7 @@ import { config } from '@/config';
 import { useVideo } from '@/store/hooks';
 import './videos-page.scss';
 import { PlayIcon } from '@/assets/svgs';
+import { VideosPageSkeleton } from './VideosPageSkeleton';
 
 export function VideosPage() {
   const { videos, getVideos } = useVideo();
@@ -24,7 +25,7 @@ export function VideosPage() {
     <div className='videos-page'>
       <Container>
         {videos.isLoading ? (
-          <>Cargando ...</>
+          <VideosPageSkeleton />
         ) : (
           <PageLayout title='Videos' path='/ videos'>
             <PageLayout.Header />
