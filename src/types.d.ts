@@ -147,3 +147,23 @@ export interface PostApi {
   featured_media: number;
   categories: number[];
 }
+// * ----------------------------------------- Video
+export interface Video {
+  id: number;
+  title: string;
+  videoID: string;
+  sort: number;
+  publicationDate: string;
+  className: string;
+  highlight: boolean;
+  href: string;
+  embed: string;
+  image?: Media;
+}
+export interface VideoApi {
+  id: number;
+  guid: GUID;
+  slug: string;
+  title: GUID;
+  acf: Acf;
+}

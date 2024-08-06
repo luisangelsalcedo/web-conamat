@@ -13,6 +13,7 @@ export { default as DownloadImage } from './icono_de_descarga.svg?react';
 export { default as WassIcon } from './icono_whatsapp.svg?react';
 export { default as GalleryIcon } from './gallery-icon.svg?react';
 export { default as EyeIcon } from './icon-eye.svg?react';
+export { default as PlayIcon } from './play-icon.svg?react';
 
 export { default as FacebookIcon } from './logo_facebook.svg';
 export { default as YoutubeIcon } from './icono_youtube.svg';

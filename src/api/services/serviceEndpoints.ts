@@ -4,7 +4,7 @@ const base = config.apiUrl;
 
 interface GetEndpoint {
   (
-    key: 'menuitems' | 'sliders' | 'posts' | 'pages' | 'media',
+    key: 'menuitems' | 'sliders' | 'posts' | 'pages' | 'media' | 'videos',
     config?: {
       id?: number;
       slug?: string;
@@ -37,6 +37,11 @@ const params = {
   media: {
     key: 'media',
     field: '_fields=id,slug,status,acf,title,guid,media_details',
+  },
+
+  videos: {
+    key: 'media',
+    field: '_fields=id,slug,status,acf,title',
   },
 };
 
