@@ -8,7 +8,8 @@ interface PropsImage {
   icon?: React.ReactElement | string;
   border?: boolean;
   showTitle?: boolean;
-  loading?: boolean;
+  positionTitle?: 'bottom' | 'above';
+  gallery?: string;
 }
 
 function Image({ src, title, showTitle }: PropsImage) {
@@ -21,7 +22,7 @@ function Image({ src, title, showTitle }: PropsImage) {
           <ImageIcon />
         </div>
       )}
-      {showTitle && <h3>{title}</h3>}
+      {showTitle && <h3 className='image-title'>{title}</h3>}
     </>
   );
 }
@@ -37,17 +38,37 @@ export function MagicImage({
   icon,
   border = false,
   showTitle = false,
+  positionTitle = 'above',
+  gallery,
 }: Props) {
   return (
-    <div className={`magic-image ${!!border ? 'magic-image-border' : ''}`}>
+    <div
+      className={`magic-image ${
+        !!border ? 'magic-image-border' : ''
+      }  ${`image-title-${positionTitle}`} `}
+    >
       {!!to ? (
-        <Link to={to} className='image image-link'>
+        <Link
+          to={to}
+          className='image image-link'
+          data-fancybox={gallery || null}
+        >
           {!!icon && icon}
-          <Image src={src} title={title} showTitle={showTitle} />
+          <Image
+            src={src}
+            title={title}
+            showTitle={showTitle}
+            positionTitle={positionTitle}
+          />
         </Link>
       ) : (
         <div className='image'>
-          <Image src={src} title={title} showTitle={showTitle} />
+          <Image
+            src={src}
+            title={title}
+            showTitle={showTitle}
+            positionTitle={positionTitle}
+          />
         </div>
       )}
     </div>
