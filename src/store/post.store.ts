@@ -27,8 +27,7 @@ export const getPostsAtom = atom(
   async (
     get,
     set,
-    page: number = 1,
-    { sticky = false }: { sticky?: boolean } = {}
+    { page = 1, sticky }: { page: number; sticky?: boolean }
   ) => {
     const state = get(postAtom);
     let tempState = { ...state };

@@ -16,7 +16,7 @@ export function BlogPage() {
   const paramPage = Number(query.get('page') ?? 1);
 
   useEffect(() => {
-    paramPage && getPosts(paramPage);
+    paramPage && getPosts({ page: paramPage });
   }, [paramPage]);
 
   return (
@@ -35,9 +35,13 @@ export function BlogPage() {
                   {posts.data.map(item => (
                     <PostMedium post={item} key={item.id} />
                   ))}
-                  {!!posts.data.length && (
-                    <Paginator currentPage={posts.currentPage}></Paginator>
-                  )}
+                  {
+                    <Paginator
+                      currentPage={posts.currentPage}
+                      limit={config.limits.posts}
+                      count={posts.data.length}
+                    ></Paginator>
+                  }
                 </>
               )}
             </PageLayout.Body>

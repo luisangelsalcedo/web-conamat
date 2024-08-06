@@ -9,7 +9,7 @@ export function StickyPostsBlock() {
   const { posts, getPosts } = usePost();
 
   useEffect(() => {
-    getPosts(1, { sticky: true });
+    getPosts({ page: 1, sticky: true });
   }, []);
 
   const hightlightStickyPosts = posts.data.filter(post => post.highlight);

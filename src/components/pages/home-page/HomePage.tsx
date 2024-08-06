@@ -1,6 +1,10 @@
 import { useSlider } from '@/store/hooks';
-import { Container } from '@/components/atoms';
-import { Slider, StickyPostsBlock } from '@/components/molecules';
+import { Container, TitleBar } from '@/components/atoms';
+import {
+  HighlightVideosBlock,
+  Slider,
+  StickyPostsBlock,
+} from '@/components/molecules';
 import './home-page.scss';
 
 export function HomePage() {
@@ -10,8 +14,14 @@ export function HomePage() {
       <Slider sliders={sliders.data} isLoading={sliders.isLoading} />
       <Container>
         <div className='blocks'>
-          <StickyPostsBlock />
-          <div>block Video</div>
+          <div>
+            <TitleBar>Noticias</TitleBar>
+            <StickyPostsBlock />
+          </div>
+          <div>
+            <TitleBar>Videos</TitleBar>
+            <HighlightVideosBlock />
+          </div>
         </div>
       </Container>
     </div>

@@ -1,12 +1,27 @@
+@import "@/assets/scss/vars.scss";
 .home-page{
     .blocks{
         display: flex;
         flex-direction: column;
-        gap: 1em;
+        gap: 3em;
         width: 100%;
         position: relative;
 
-       
+       & > div{
+        position: relative;
+        overflow: hidden;
+
+        .title-bar{
+            margin-bottom: 1em;
+            font-size: .8em;
+
+            svg{
+                path{
+                    fill: $primary;
+                }
+            }
+        }
+       }
 
         @media (min-width:700px) {
             flex-direction: row;

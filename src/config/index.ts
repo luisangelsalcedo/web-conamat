@@ -6,4 +6,8 @@ export const config = {
     PAGENOFOUND: 'Page no found',
     EMPTYLIST: 'Empty list',
   },
+  limits: {
+    videos: 15,
+    posts: 10,
+  },
 };
