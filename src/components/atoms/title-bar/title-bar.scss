@@ -1,0 +1,31 @@
+@import "@/assets/scss/vars.scss";
+
+.title-bar{
+    &-element{
+        position: relative;
+        display: inline-flex;
+        height: 3rem;
+        color: white;
+        padding-left: 1rem;
+        align-items: center;
+        
+
+        svg{
+            top: 0;
+            right: -6rem;
+            position: absolute;
+            flex-shrink: 0;
+            height: inherit;
+            z-index: 1;
+            path {
+                fill: $secondary;
+            }
+        }
+
+        span{
+            position: inherit;
+            z-index: 2;
+        }
+        
+    }
+}

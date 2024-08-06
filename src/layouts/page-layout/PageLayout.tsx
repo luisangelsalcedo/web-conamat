@@ -1,8 +1,8 @@
 import { createContext, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { config } from '@/config';
-import { Titlebar } from '@/assets/svgs';
 import './page-layout.scss';
+import { TitleBar } from '@/components/atoms';
 
 interface PageContextValue {
   title: string;
@@ -27,10 +27,7 @@ function PageLayoutBody({ children }: PropsPageChildren) {
   const { title } = useContext(PageContext);
   return (
     <div className='page-layout-body'>
-      <h1>
-        <span>{title}</span>
-        <Titlebar />
-      </h1>
+      <TitleBar>{title}</TitleBar>
       <div className='page-layout-content'>{children}</div>
     </div>
   );
