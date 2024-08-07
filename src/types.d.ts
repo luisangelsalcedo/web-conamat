@@ -167,3 +167,25 @@ export interface VideoApi {
   title: GUID;
   acf: Acf;
 }
+// * ----------------------------------------- Gallery
+export interface Gallery {
+  id: number;
+  slug: string;
+  title: string;
+  sort: number;
+  content: string;
+  publicationDate: string;
+  className: string;
+  mediaId: number;
+  image?: Media;
+  href?: string;
+}
+export interface GalleryApi {
+  id: number;
+  slug: string;
+  acf: Acf;
+  title: GUID;
+  content: GUID;
+  excerpt: GUID;
+  featured_media: numer;
+}

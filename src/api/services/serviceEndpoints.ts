@@ -4,7 +4,14 @@ const base = config.apiUrl;
 
 interface GetEndpoint {
   (
-    key: 'menuitems' | 'sliders' | 'posts' | 'pages' | 'media' | 'videos',
+    key:
+      | 'menuitems'
+      | 'sliders'
+      | 'posts'
+      | 'pages'
+      | 'media'
+      | 'videos'
+      | 'galleries',
     config?: {
       id?: number;
       slug?: string;
@@ -18,30 +25,32 @@ interface GetEndpoint {
 const params = {
   menuitems: {
     key: 'menuitems',
-    field: '_fields=id,slug,status,acf,name',
+    field: '_fields=id,slug,acf,name',
   },
   sliders: {
     key: 'sliders',
-    field: '_fields=id,slug,status,acf,title,featured_media',
+    field: '_fields=id,slug,acf,title,featured_media',
   },
   posts: {
     key: 'posts',
     field:
-      '_fields=id,slug,status,acf,title,content,excerpt,featured_media,categories',
+      '_fields=id,slug,acf,title,content,excerpt,featured_media,categories',
   },
   pages: {
     key: 'pages',
-    field:
-      '_fields=id,slug,status,acf,title,content,excerpt,menuitems,menu_order',
+    field: '_fields=id,slug,acf,title,content,excerpt,menuitems,menu_order',
   },
   media: {
     key: 'media',
-    field: '_fields=id,slug,status,acf,title,guid,media_details',
+    field: '_fields=id,slug,acf,title,guid,media_details',
   },
-
   videos: {
-    key: 'media',
-    field: '_fields=id,slug,status,acf,title',
+    key: 'videos',
+    field: '_fields=id,slug,acf,title',
+  },
+  galleries: {
+    key: 'galleries',
+    field: '_fields=id,slug,acf,title,content,excerpt,featured_media',
   },
 };
 
