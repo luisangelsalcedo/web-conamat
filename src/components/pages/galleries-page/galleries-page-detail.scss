@@ -1,3 +1,33 @@
 .galleries-page-detail{
-    
+    &-content{
+        margin-top: 1.5em;
+    }
+    .wp-block-gallery{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        @media(min-width:650px){
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        & > figure{
+            @media(min-width:650px){
+                width: calc(100%/2 - 1em/2);
+            }
+            @media(min-width:850px){
+                width: calc(100%/3 - 2em/3);
+            }
+        }
+
+        .image{
+            height: calc(11em + 10vw);
+            @media(min-width:500px){
+                height: calc(11em + 15vw);
+            }
+            @media(min-width:650px){
+                height: calc(11em);
+            }
+        }
+    }
 }

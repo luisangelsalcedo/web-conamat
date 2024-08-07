@@ -25,7 +25,7 @@ export function MainRoutes() {
           <Route path='blog/:id/:slug' element={<BlogPageDetail />} />
           <Route path='videos' element={<VideosPage />} />
           <Route path='galerias' element={<GalleriesPage />} />
-          <Route path='galerias/:id/:slug' element={<GalleriesPageDetail />} />
+          <Route path='galerias/:slug' element={<GalleriesPageDetail />} />
           <Route path='examenes' element={<AssesmentsPage />} />
           <Route path='examenes/:id/:slug' element={<AssesmentsPageDetail />} />
         </Route>
