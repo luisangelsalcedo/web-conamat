@@ -6,7 +6,9 @@ import { config } from '@/config';
 
 export async function serviceGetAllPost(page: number = 1) {
   try {
-    const response = await fetch(getEndpoint('posts', { page, limit: 10 }));
+    const response = await fetch(
+      getEndpoint('posts', { page, limit: config.limits.posts })
+    );
     if (response.ok) {
       const data = await response.json();
 

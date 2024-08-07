@@ -5,7 +5,7 @@ import { config } from '@/config';
 
 export async function serviceGetAllVideos(
   page: number = 1,
-  limit: number = 15
+  limit: number = config.limits.videos
 ) {
   try {
     const response = await fetch(getEndpoint('videos', { page, limit }));
