@@ -28,6 +28,7 @@ export function HighlightVideosBlock() {
                 title={video.title}
                 showTitle
                 positionTitle='bottom'
+                key={video.id}
               />
             ))}
         </>
