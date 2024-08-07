@@ -2,7 +2,7 @@ import { ImageIcon } from '@/assets/svgs';
 import { Link } from 'react-router-dom';
 import './magic-image.scss';
 
-interface PropsImage {
+interface PropsImage<T = any> {
   src?: string;
   title?: string;
   icon?: React.ReactElement | string;
@@ -10,9 +10,10 @@ interface PropsImage {
   showTitle?: boolean;
   positionTitle?: 'bottom' | 'above';
   gallery?: string;
+  state?: T;
 }
 
-function Image({ src, title, showTitle }: PropsImage) {
+function Image<T>({ src, title, showTitle }: PropsImage<T>) {
   return (
     <>
       {src !== 'undefined' ? (
@@ -40,6 +41,7 @@ export function MagicImage({
   showTitle = false,
   positionTitle = 'above',
   gallery,
+  state,
 }: Props) {
   return (
     <div
@@ -52,6 +54,7 @@ export function MagicImage({
           to={to}
           className='image image-link'
           data-fancybox={gallery || null}
+          state={state}
         >
           {!!icon && icon}
           <Image
