@@ -3,5 +3,19 @@
         display: flex;
         flex-direction: column;
         gap: 1em;
+
+        .image{
+            height: 12em;
+        }
+    }
+
+    .skeleton{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        & > span{
+            height: 12em;
+        }
     }
 }

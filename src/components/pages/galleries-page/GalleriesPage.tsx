@@ -8,6 +8,7 @@ import { Container } from '@/components/atoms';
 import { PageLayout } from '@/layouts';
 import { config } from '@/config';
 import './galleries-page.scss';
+import { GalleriesPageSkeleton } from './GalleriesPageSkeleton';
 
 export function GalleriesPage() {
   const { galleries, getGalleries } = useGallery();
@@ -24,7 +25,7 @@ export function GalleriesPage() {
     <div className='galleries-page'>
       <Container>
         {galleries.isLoading ? (
-          'cargando...'
+          <GalleriesPageSkeleton />
         ) : (
           <PageLayout title='Galerías' path='/ galerías'>
             <PageLayout.Header />

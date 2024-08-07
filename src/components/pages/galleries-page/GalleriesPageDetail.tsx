@@ -5,8 +5,9 @@ import { useGallery } from '@/store/hooks';
 import { PageLayout } from '@/layouts';
 import { Container, Date } from '@/components/atoms';
 import { MagicImage } from '@/components/molecules';
-import './galleries-page-detail.scss';
 import { ZoonBackIcon } from '@/assets/svgs';
+import './galleries-page-detail.scss';
+import { GalleriesPageDetailSkeleton } from './GalleriesPageDetailSkeleton';
 
 export function GalleriesPageDetail() {
   const { slug } = useParams();
@@ -41,7 +42,7 @@ export function GalleriesPageDetail() {
     <div className='galleries-page-detail'>
       <Container>
         {galleries.isLoading ? (
-          'cargando...'
+          <GalleriesPageDetailSkeleton />
         ) : (
           <PageLayout title='Galería' path={`/ ${galleries.gallery?.slug}`}>
             <PageLayout.Header />
