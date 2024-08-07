@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import htmlParser, { HTMLReactParserOptions, Element } from 'html-react-parser';
 import { useEffect } from 'react';
 import { useGallery } from '@/store/hooks';
@@ -6,16 +6,22 @@ import { PageLayout } from '@/layouts';
 import { Container, Date } from '@/components/atoms';
 import { MagicImage } from '@/components/molecules';
 import { ZoonBackIcon } from '@/assets/svgs';
-import './galleries-page-detail.scss';
 import { GalleriesPageDetailSkeleton } from './GalleriesPageDetailSkeleton';
+import { config } from '@/config';
+import './galleries-page-detail.scss';
 
 export function GalleriesPageDetail() {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const { galleries, getGalleryBySlug } = useGallery();
 
   useEffect(() => {
     slug && getGalleryBySlug(slug ?? '');
   }, [slug]);
+
+  useEffect(() => {
+    galleries.error && navigate(config.nofoundUrl, { replace: false });
+  }, [galleries]);
 
   const options: HTMLReactParserOptions = {
     replace(domNode) {
