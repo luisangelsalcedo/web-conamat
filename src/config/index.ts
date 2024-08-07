@@ -10,5 +10,6 @@ export const config = {
     videos: 15,
     posts: 10,
     galleries: 12,
+    assessment: 10,
   },
 };

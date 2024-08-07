@@ -12,7 +12,8 @@ interface GetEndpoint {
       | 'media'
       | 'videos'
       | 'galleries'
-      | 'popup',
+      | 'popup'
+      | 'assessments',
     config?: {
       id?: number;
       slug?: string;
@@ -56,6 +57,10 @@ const params = {
   popup: {
     key: 'popup',
     field: '_fields=id,slug,acf,title',
+  },
+  assessments: {
+    key: 'assessments',
+    field: '_fields=id,slug,acf,title,content',
   },
 };
 

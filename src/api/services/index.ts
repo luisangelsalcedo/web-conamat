@@ -5,3 +5,4 @@ export * from './post.service';
 export * from './video.service';
 export * from './gallery.service';
 export * from './popup.service';
+export * from './assessment.service';

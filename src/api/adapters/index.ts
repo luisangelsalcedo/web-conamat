@@ -6,3 +6,4 @@ export * from './post.adapter.ts';
 export * from './video.adapter.ts';
 export * from './gallery.adapter.ts';
 export * from './popup.adapter.ts';
+export * from './assessment.adapter.ts';

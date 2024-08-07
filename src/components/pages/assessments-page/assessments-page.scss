@@ -1,0 +1,23 @@
+@import '@/assets/scss/vars.scss';
+
+.assessment-page{
+    &-item{
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 0;
+        border-bottom: solid 1px rgba($color: $default, $alpha: .2);
+        div{
+            flex: 1;
+            font-size: .8rem;
+            margin: 0;
+        }
+
+        
+    }
+    .paginator{
+        margin-top: 2rem;
+    }
+}

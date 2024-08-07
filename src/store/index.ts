@@ -5,3 +5,4 @@ export * from './post.store';
 export * from './video.store';
 export * from './gallery.store';
 export * from './popup.store';
+export * from './assessment.store';

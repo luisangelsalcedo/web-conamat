@@ -5,3 +5,4 @@ export * from './usePost';
 export * from './useVideo';
 export * from './useGallery';
 export * from './usePopups';
+export * from './useAssessment';

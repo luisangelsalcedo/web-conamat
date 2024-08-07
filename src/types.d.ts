@@ -178,7 +178,7 @@ export interface Gallery {
   className: string;
   mediaId: number;
   image?: Media;
-  href?: string;
+  href: string;
 }
 export interface GalleryApi {
   id: number;
@@ -205,5 +205,23 @@ export interface PopupApi {
   id: number;
   slug: string;
   title: GUID;
+  acf: Acf;
+}
+// * ----------------------------------------- Assessment
+export interface Assessment {
+  id: number;
+  slug: string;
+  title: string;
+  content: string;
+  publicationDate: string;
+  className: string;
+  sort: number;
+  href: string;
+}
+export interface AssessmentApi {
+  id: number;
+  slug: string;
+  title: GUID;
+  content: GUID;
   acf: Acf;
 }

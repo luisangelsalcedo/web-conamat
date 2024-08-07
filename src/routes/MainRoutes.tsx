@@ -2,8 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { config } from '@/config';
 import { MainLayout } from '@/layouts';
 import {
-  AssesmentsPage,
-  AssesmentsPageDetail,
+  AssessmentsPage,
+  AssessmentsPageDetail,
   GalleriesPage,
   GalleriesPageDetail,
   GeneralPage,
@@ -26,8 +26,8 @@ export function MainRoutes() {
           <Route path='videos' element={<VideosPage />} />
           <Route path='galerias' element={<GalleriesPage />} />
           <Route path='galerias/:slug' element={<GalleriesPageDetail />} />
-          <Route path='examenes' element={<AssesmentsPage />} />
-          <Route path='examenes/:id/:slug' element={<AssesmentsPageDetail />} />
+          <Route path='examenes' element={<AssessmentsPage />} />
+          <Route path='examenes/:slug' element={<AssessmentsPageDetail />} />
         </Route>
         <Route path='*' element={<NofoundPage />}></Route>
       </Routes>

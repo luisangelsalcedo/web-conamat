@@ -1,7 +1,7 @@
 export { HomePage } from './home-page/HomePage';
 export { GeneralPage } from './general-page/GeneralPage';
-export { AssesmentsPage } from './assesments-page/AssesmentsPage';
-export { AssesmentsPageDetail } from './assesments-page/AssesmentsPageDetail';
+export { AssessmentsPage } from './assessments-page/AssessmentsPage';
+export { AssessmentsPageDetail } from './assessments-page/AssessmentsPageDetail';
 export { GalleriesPage } from './galleries-page/GalleriesPage';
 export { GalleriesPageDetail } from './galleries-page/GalleriesPageDetail';
 export { BlogPage } from './blog-page/BlogPage';
