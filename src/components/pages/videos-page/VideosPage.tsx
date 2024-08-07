@@ -3,12 +3,11 @@ import { useLocation } from 'react-router-dom';
 import { PageLayout } from '@/layouts';
 import { Container } from '@/components/atoms';
 import { EmptyElements, MagicImage, Paginator } from '@/components/molecules';
-// import { BlogPageSkeleton } from './BlogPageSkeleton';
 import { config } from '@/config';
 import { useVideo } from '@/store/hooks';
-import './videos-page.scss';
 import { PlayIcon } from '@/assets/svgs';
 import { VideosPageSkeleton } from './VideosPageSkeleton';
+import './videos-page.scss';
 
 export function VideosPage() {
   const { videos, getVideos } = useVideo();
