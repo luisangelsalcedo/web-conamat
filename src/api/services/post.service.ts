@@ -3,6 +3,7 @@ import { postApiListToPostList, postApiToPost } from '../adapters';
 import { serviceGetMedia } from './media.service';
 import { getEndpoint } from './serviceEndpoints';
 import { config } from '@/config';
+import { getTime } from '@/utilities';
 
 export async function serviceGetAllPost(page: number = 1) {
   try {
@@ -18,7 +19,9 @@ export async function serviceGetAllPost(page: number = 1) {
           return uploadPostImage(post);
         })
       );
-      return posts.toSorted((a, b) => a.sort - b.sort);
+      return posts.toSorted(
+        (a, b) => getTime(b.publicationDate) - getTime(a.publicationDate)
+      );
     }
     throw config.errors.EMPTYLIST;
   } catch (error) {
@@ -40,7 +43,9 @@ export async function serviceGetAllPostSticky() {
           return uploadPostImage(post);
         })
       );
-      return posts.toSorted((a, b) => a.sort - b.sort);
+      return posts.toSorted(
+        (a, b) => getTime(b.publicationDate) - getTime(a.publicationDate)
+      );
     }
     throw config.errors.EMPTYLIST;
   } catch (error) {
