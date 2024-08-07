@@ -9,5 +9,6 @@ export const config = {
   limits: {
     videos: 15,
     posts: 10,
+    galleries: 12,
   },
 };
