@@ -189,3 +189,21 @@ export interface GalleryApi {
   excerpt: GUID;
   featured_media: numer;
 }
+// * ----------------------------------------- Popup
+export interface Popup {
+  id: number;
+  slug: string;
+  title: string;
+  className: string;
+  href: string;
+  target: string;
+  sort: number;
+  mediaId: number;
+  image?: Media;
+}
+export interface PopupApi {
+  id: number;
+  slug: string;
+  title: GUID;
+  acf: Acf;
+}

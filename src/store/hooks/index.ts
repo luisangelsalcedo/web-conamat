@@ -4,3 +4,4 @@ export * from './useSlider';
 export * from './usePost';
 export * from './useVideo';
 export * from './useGallery';
+export * from './usePopups';
