@@ -31,7 +31,7 @@ export function Slider({ sliders, isLoading }: Props) {
           }}
           pagination={sliders.length > 1}
           navigation={sliders.length > 1}
-          loop={sliders.length > 1}
+          loop={sliders.length > 2}
         >
           {sliders.map(item => (
             <SwiperSlide key={item.id}>
