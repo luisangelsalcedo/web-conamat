@@ -3,7 +3,7 @@ import { mediaApiToMedia } from '@/api/adapters';
 import { getEndpoint } from './serviceEndpoints';
 
 export function serviceGetMedia(id: number) {
-  return new Promise<Media>((resolve, reject) => {
+  return new Promise<Media>(resolve => {
     fetch(getEndpoint('media', { id }))
       .then(response => response.ok && response.json())
       .then(data => resolve(mediaApiToMedia(data)))
