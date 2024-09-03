@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "env-cmd -f .env --use-shell \"scp -r ./dist/* %SSH_SERVER%:.%REMOTE_DIR%\""
   },
   "keywords": [],
   "author": "",
