@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+#Si la url solicitada no es un fichero(existente), continuar...
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#Si la url solicitada no es una carpeta(existente), continuar...
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
+</IfModule>
