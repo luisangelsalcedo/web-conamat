@@ -124,10 +124,6 @@ export function Footer() {
                 <a href='https://api.whatsapp.com/send?phone=51997380191&amp;text=Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n'>
                   997 380 191
                 </a>
-                /
-                <a href='https://api.whatsapp.com/send?phone=51986651836&amp;text=Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n'>
-                  986 651 836
-                </a>
               </li>
             </ul>
           </div>
