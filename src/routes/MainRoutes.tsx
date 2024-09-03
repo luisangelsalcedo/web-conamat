@@ -28,8 +28,8 @@ export function MainRoutes() {
           <Route path='galerias/:slug' element={<GalleriesPageDetail />} />
           <Route path='examenes' element={<AssessmentsPage />} />
           <Route path='examenes/:slug' element={<AssessmentsPageDetail />} />
+          <Route path='*' element={<NofoundPage />}></Route>
         </Route>
-        <Route path='*' element={<NofoundPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
