@@ -77,10 +77,32 @@
                 font-size: 1em;
             }
         }
+        li{
+            display: flex;
+            align-items: center;
+            gap:0.3em;
+            position: relative;
 
+            &.phones{
+                padding-left: 3em;
+                flex-wrap: wrap;
+                @media (min-width:860px) {
+                    width: 18em;
+                    
+                }
+
+                svg{
+                    width: 2em;
+                    height: auto;
+                    position: absolute;
+                    left: 0;
+                }
+            }
+        }
         svg{
             height: 100px;
         }
+
 
         p > a{
             font-size: .8em;
