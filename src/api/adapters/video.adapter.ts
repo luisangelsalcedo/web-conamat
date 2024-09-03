@@ -18,20 +18,20 @@ export const videoApiListToVideoList = (list: VideoApi[]): Video[] =>
 
 const yotubeImage = (id: string): Media => ({
   id,
-  src: `http://img.youtube.com/vi/${id}/maxresdefault.jpg`,
+  src: `https://img.youtube.com/vi/${id}/maxresdefault.jpg`,
   title: 'image-youtube',
   slug: 'image-youtube',
   sizes: {
     thumbnail: {
-      source_url: `http://img.youtube.com/vi/${id}/default.jpg`,
+      source_url: `https://img.youtube.com/vi/${id}/default.jpg`,
     },
     medium: {
-      source_url: `http://img.youtube.com/vi/${id}/mqdefault.jpg`,
+      source_url: `https://img.youtube.com/vi/${id}/mqdefault.jpg`,
     },
-    large: { source_url: `http://img.youtube.com/vi/${id}/hqdefault.jpg` },
+    large: { source_url: `https://img.youtube.com/vi/${id}/hqdefault.jpg` },
     medium_large: {
-      source_url: `http://img.youtube.com/vi/${id}/sddefault.jpg`,
+      source_url: `https://img.youtube.com/vi/${id}/sddefault.jpg`,
     },
-    full: { source_url: `http://img.youtube.com/vi/${id}/maxresdefault.jpg` },
+    full: { source_url: `https://img.youtube.com/vi/${id}/maxresdefault.jpg` },
   },
 });
