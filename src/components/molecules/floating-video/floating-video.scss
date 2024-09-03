@@ -1,0 +1,135 @@
+@import "@/assets/scss/vars.scss";
+
+@keyframes openvideo {   
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes openmessage { 
+    10%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    20%{
+        transform: translateX(10px);
+    }
+    30%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(10px);
+    }
+    60%{
+        transform: translateX(0);
+    }
+    70%{
+        transform: translateX(10px);
+    }
+    80%{
+        transform: translateX(0);
+    }
+    90%{
+        transform: translateX(10px);
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 0;
+        display: none;
+    }
+}
+
+
+.floating-video{    
+    margin: auto;
+    background-color: white;
+    border: solid .4em white;
+    z-index: 6;
+    width: 20em;
+    height: 15em;
+    box-shadow: 0 0 2em rgba($color: #000000, $alpha: .8);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation-name: openvideo;
+    animation-duration: .5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    transform: translateY(400px);
+    opacity: 0;
+
+    @media (min-width:600px) {
+        left: auto;
+        right: 2em;
+    }
+
+
+    iframe{
+        width: 100%;
+        height: 100%;
+        border: 0;
+        outline: none;
+        display: block;
+    }
+
+    button{
+        position: absolute;
+        right: -1em;
+        top: -1em;
+        background-color: $primary;
+        border: 0;
+        outline: none;
+        padding: .5em .8em;
+        border: .2em;
+        color: white;
+        font-weight: bold;
+        font-size: 1em;
+        box-shadow: 0 0 2em rgba($color: #000000, $alpha: .8);
+    }
+    span{
+        background-color: yellow;
+        padding: .5em 1em;
+        font-size: .7em;
+        box-shadow: 0 0 1em rgba($color: #000000, $alpha: .8);
+        position: absolute;
+        border-radius: .5em 0 0 .5em;
+        bottom: .5em;
+        left: -4.5em;
+        animation-name: openmessage;
+        animation-duration: 5s;
+        animation-fill-mode: forwards;
+        animation-delay: 2s;
+        transform: translateX(-100px);
+        opacity: 0;
+
+        &::before{
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: solid .7em yellow;
+            border-top: solid 1em transparent;
+            border-bottom: solid 1em transparent;
+            top:0;
+            bottom: 0;
+            margin: auto;
+            left: 100%;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

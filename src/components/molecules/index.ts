@@ -9,3 +9,5 @@ export { MagicImage } from './magic-image/MagicImage';
 export { StickyPostsBlock } from './sticky-posts-block/StickyPostsBlock';
 export { PostsSlider } from './posts-slider/PostsSlider';
 export { HighlightVideosBlock } from './highlight-videos-block/HighlightVideosBlock';
+export { Popup } from './popup/Popup';
+export { FloatingVideo } from './floating-video/FloatingVideo';
