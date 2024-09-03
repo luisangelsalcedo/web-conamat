@@ -225,3 +225,12 @@ export interface AssessmentApi {
   content: GUID;
   acf: Acf;
 }
+// * ----------------------------------------- Floatingvideo
+export interface Floatingvideo {
+  id: number;
+  href: string;
+}
+export interface FloatingvideoApi {
+  id: number;
+  acf: Acf;
+}
