@@ -16,7 +16,7 @@
   "dependencies": {
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
-    "@fancyapps/ui": "4.0.31",
+    "@fancyapps/ui": "5.0.36",
     "@mui/material": "5.14.18",
     "html-react-parser": "5.0.6",
     "jotai": "2.5.1",
@@ -33,6 +33,7 @@
     "@typescript-eslint/eslint-plugin": "6.12.0",
     "@typescript-eslint/parser": "6.12.0",
     "@vitejs/plugin-react-swc": "3.5.0",
+    "env-cmd": "^10.1.0",
     "eslint": "8.54.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-config-standard": "17.1.0",
