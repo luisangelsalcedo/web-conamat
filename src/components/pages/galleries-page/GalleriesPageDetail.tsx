@@ -28,13 +28,18 @@ export function GalleriesPageDetail() {
       if (domNode instanceof Element && domNode.attribs) {
         if (!domNode.attribs) return;
         if (domNode.attribs.loading === 'lazy') {
+          const image = domNode.attribs.src.replace(
+            'https://www.conamat.edu.pe/api/wp-content/uploads/',
+            'https://files.conamat.edu.pe/'
+          );
+
           return (
             // <a href={domNode.attribs.src} data-fancybox='gallery'>
             //   <img src={domNode.attribs.src} alt='' />
             // </a>
             <MagicImage
               src={domNode.attribs.src}
-              to={domNode.attribs.src}
+              to={image}
               gallery={galleries.gallery?.slug}
               icon={<ZoonBackIcon />}
             />
