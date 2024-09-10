@@ -33,22 +33,24 @@ export function Slider({ sliders, isLoading }: Props) {
           navigation={sliders.length > 1}
           loop={sliders.length > 1}
         >
-          {sliders.map(item => (
-            <SwiperSlide key={item.id}>
-              <Link to={item.href} target={item.target}>
-                <img
-                  src={item.mobileImage?.sizes.full?.source_url}
-                  width='100%'
-                  className='mobile-image'
-                />
-                <img
-                  src={item.image?.sizes.full?.source_url}
-                  width='100%'
-                  className='full-image'
-                />
-              </Link>
-            </SwiperSlide>
-          ))}
+          {sliders
+            .filter(item => item.image && item.mobileImage)
+            .map(item => (
+              <SwiperSlide key={item.id}>
+                <Link to={item.href} target={item.target}>
+                  <img
+                    src={item.mobileImage?.sizes.full?.source_url}
+                    width='100%'
+                    className='mobile-image'
+                  />
+                  <img
+                    src={item.image?.sizes.full?.source_url}
+                    width='100%'
+                    className='full-image'
+                  />
+                </Link>
+              </SwiperSlide>
+            ))}
         </Swiper>
       )}
     </section>

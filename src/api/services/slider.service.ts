@@ -9,13 +9,14 @@ export async function serviceGetAllSliders() {
 
     if (response.ok) {
       const data: SliderApi[] = await response.json();
-
       const sliders: Slider[] = await Promise.all(
         data.map(async (item: SliderApi) => {
           const slider = sliderApiToSlider(item);
-          return uploadSliderImage(slider);
+          const sliderWithImages = await uploadSliderImage(slider);
+          return sliderWithImages;
         })
       );
+
       return sliders.toSorted((a, b) => a.sort - b.sort);
     }
     return [];
