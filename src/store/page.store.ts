@@ -62,7 +62,12 @@ export const getPageBySlugAtom = atom(
     const state = get(pagesAtom);
     let tempState = { ...state };
 
-    set(pagesAtom, { ...state, isLoading: true });
+    set(pagesAtom, {
+      ...state,
+      isLoading: true,
+      error: undefined,
+      page: undefined,
+    });
 
     try {
       const page = await serviceGetPageBySlug(slug); // return [{}]

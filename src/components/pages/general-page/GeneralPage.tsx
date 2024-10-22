@@ -22,18 +22,34 @@ export function GeneralPage() {
     pageSlug && getPageByIdSlug(pageSlug);
   }, [pageSlug]);
 
-  // validation slug menu
-  useEffect(() => {
-    menuItems.error && navigate(config.nofoundUrl, { replace: false });
-  }, [menuItems]);
+  // // validation slug menu
+  // useEffect(() => {
+  //   menuItems.error && navigate(config.nofoundUrl, { replace: false });
+  // }, [menuItems]);
 
-  // validation slug page
+  // // validation slug page
+  // useEffect(() => {
+  //   pages.error && navigate(config.nofoundUrl, { replace: false });
+  // }, [pages]);
+
   useEffect(() => {
-    pages.error && navigate(config.nofoundUrl, { replace: false });
-  }, [pages]);
+    // ! menu undefined
+    // ! page undefined
+    if (menuItems.error && pages.error) {
+      navigate(config.nofoundUrl, { replace: false });
+    }
+
+    // ! menu existe
+    // ! page undefined
+    if (!menuItems.error && pages.error) {
+      navigate(config.nofoundUrl, { replace: false });
+    }
+  }, [menuItems, pages]);
 
   const pagePath =
     pages.page?.href === '#' ? `/ ${menuSlug} / ${pageSlug}` : pages.page?.href;
+
+  // console.log({ menu: menuItems.error, page: pages.error });
 
   return (
     <Container>

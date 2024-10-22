@@ -21,6 +21,7 @@ export function MainRoutes() {
         <Route path={config.baseUrl} element={<MainLayout />}>
           <Route index element={<HomePage />} />
           <Route path=':menuSlug/:pageSlug' element={<GeneralPage />} />
+          <Route path=':pageSlug' element={<GeneralPage />} />
           <Route path='noticias' element={<BlogPage />} />
           <Route path='blog/:id/:slug' element={<BlogPageDetail />} />
           <Route path='videos' element={<VideosPage />} />
@@ -28,6 +29,7 @@ export function MainRoutes() {
           <Route path='galerias/:slug' element={<GalleriesPageDetail />} />
           <Route path='examenes' element={<AssessmentsPage />} />
           <Route path='examenes/:slug' element={<AssessmentsPageDetail />} />
+          <Route path='no-found-page' element={<NofoundPage />}></Route>
           <Route path='*' element={<NofoundPage />}></Route>
         </Route>
       </Routes>

@@ -31,7 +31,7 @@ export const getMenuitemsAtom = atom(
 
     try {
       const data = await serviceGetAllMenuItem();
-      tempState = { ...state, data };
+      tempState = { ...state, data, error: undefined };
     } catch (error) {
       tempState = { ...state, error };
     } finally {
@@ -48,7 +48,7 @@ export const getMenuItemByIdSlugAtom = atom(
 
     try {
       const menuItem = await serviceGetMenuItemBySlug(slug); // return [{}]
-      tempState = { ...state, menuItem };
+      tempState = { ...state, menuItem, error: undefined };
     } catch (error) {
       tempState = { ...state, error };
     } finally {
@@ -67,7 +67,7 @@ export const getMenuitemsWithPagesAtom = atom(
 
     try {
       const menuWithSubmenu = await serviceGetAllMenuItemsWithPage();
-      tempState = { ...state, menuWithSubmenu };
+      tempState = { ...state, menuWithSubmenu, error: undefined };
     } catch (error) {
       tempState = { ...state, error };
     } finally {
