@@ -1,4 +1,9 @@
-import { FacebookIcon, YoutubeIcon, WhatsappIcon } from '@/assets/svgs';
+import {
+  FacebookIcon,
+  YoutubeIcon,
+  WhatsappIcon,
+  LogoTikTok,
+} from '@/assets/svgs';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { config } from '@/config';
@@ -8,6 +13,7 @@ interface SocialMediaLinks {
   facebook?: string;
   youtube?: string;
   whatsapp?: string;
+  tiktok?: string;
 }
 
 export function SocialMediaMenu() {
@@ -41,6 +47,13 @@ export function SocialMediaMenu() {
         <li>
           <Link to={socialmedia.whatsapp} target='_blank' rel='noreferrer'>
             <img src={WhatsappIcon} alt='Icon WhatsApp' />
+          </Link>
+        </li>
+      )}
+      {!!socialmedia.tiktok && (
+        <li>
+          <Link to={socialmedia.tiktok} target='_blank' rel='noreferrer'>
+            <img src={LogoTikTok} alt='Icon WhatsApp' />
           </Link>
         </li>
       )}

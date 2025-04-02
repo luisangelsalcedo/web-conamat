@@ -109,27 +109,27 @@ export function Footer() {
               </li>
               <li className='phones'>
                 <WassIcon />
-                <a href='https://api.whatsapp.com/send?phone=51987839552&amp;text=Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n'>
+                {/* <a href='https://api.whatsapp.com/send?phone=51987839552&amp;text=Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n'>
                   987 839 552
                 </a>
-                /
+                / */}
                 <a href='https://api.whatsapp.com/send?phone=51983815312&amp;text=Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n'>
                   983 815 312
                 </a>
-                /
+                {/* /
                 <a href='https://api.whatsapp.com/send?phone=51934974273&amp;text=Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n'>
                   934 974 273
                 </a>
                 /
                 <a href='https://api.whatsapp.com/send?phone=51997380191&amp;text=Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n'>
                   997 380 191
-                </a>
+                </a> */}
               </li>
             </ul>
           </div>
           <div>
             <p>
-              Todos los derechos reservados 2023 <br />
+              Todos los derechos reservados {new Date().getFullYear()} <br />
               <a
                 href='views/Autorizacion_para_el_uso_y_tratamiento_de_datos.pdf'
                 target='_blank'

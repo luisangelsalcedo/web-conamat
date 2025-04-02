@@ -26,3 +26,4 @@ export { default as LogoAduni } from './logo_aduni.svg';
 export { default as LogoUch } from './logo_uch.svg';
 export { default as LogoCbb } from './logo_cbb.svg';
 export { default as LogoLumbreras } from './logo_lumbreras.svg';
+export { default as LogoTikTok } from './logo_tiktok.svg';
