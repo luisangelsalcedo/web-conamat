@@ -20,6 +20,7 @@ export { default as ZoonBackIcon } from './zoomback-icon.svg?react';
 export { default as FacebookIcon } from './logo_facebook.svg';
 export { default as YoutubeIcon } from './icono_youtube.svg';
 export { default as WhatsappIcon } from './icono_whatsapp.svg';
+export {default as InstagramIcon} from './logo-instagram.svg';
 export { default as LogoCesarVallejo } from './logo_cesar_vallejo.svg';
 export { default as LogoMas60 } from './logo_mas_de_60.svg';
 export { default as LogoAduni } from './logo_aduni.svg';
