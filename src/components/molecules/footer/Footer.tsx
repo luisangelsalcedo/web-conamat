@@ -1,6 +1,6 @@
 import {
   LogoCesarVallejo,
-  LogoMas60,
+  //LogoMas60,
   LogoAduni,
   LogoUch,
   LogoCbb,
@@ -29,6 +29,9 @@ export function Footer() {
                 <img src={LogoCesarVallejo} />
               </a>
             </li>
+            {
+              /*
+              
             <li>
               <a
                 href='https://academiacesarvallejo.edu.pe/'
@@ -39,6 +42,8 @@ export function Footer() {
                 <img src={LogoMas60} alt='' />
               </a>
             </li>
+              */ 
+            }
             <li>
               <a
                 href='https://aduni.edu.pe/'
