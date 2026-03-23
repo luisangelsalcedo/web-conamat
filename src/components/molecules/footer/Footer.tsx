@@ -11,6 +11,7 @@ import {
   WassIcon,
 } from '@/assets/svgs';
 import './footer.scss';
+import { SocialMediaMenu } from '../socialmedia-menu/SocialMediaMenu';
 
 export function Footer() {
   return (
@@ -133,7 +134,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p>
+            {/* <p>
               Todos los derechos reservados {new Date().getFullYear()} <br />
               <a
                 href='views/Autorizacion_para_el_uso_y_tratamiento_de_datos.pdf'
@@ -141,7 +142,8 @@ export function Footer() {
               >
                 Autorizacion para el uso y tratamiento de datos
               </a>
-            </p>
+            </p> */}
+            <SocialMediaMenu></SocialMediaMenu>
           </div>
         </div>
       </div>

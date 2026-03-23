@@ -30,37 +30,41 @@ export function SocialMediaMenu() {
   }, []);
 
   return (
-    <ul className='socialmedia-menu'>
-      {!!socialmedia.facebook && (
-        <li>
-          <Link to={socialmedia.facebook} target='_blank' rel='noreferrer'>
-            <img src={FacebookIcon} alt='Icon Facebook' />
-          </Link>
-        </li>
-      )}
-      {!!socialmedia.youtube && (
-        <li>
-          <Link to={socialmedia.youtube} target='_blank' rel='noreferrer'>
-            <img src={YoutubeIcon} alt='Icon YouTube' />
-          </Link>
-        </li>
-      )}
-      
-      {!!socialmedia.instagram && (
-        <li>
-          <Link to={socialmedia.instagram} target='_blank' rel='noreferrer'>
-            <img src={InstagramIcon} alt='Icon instagram' />
-          </Link>
-        </li>
-      )}
-      {!!socialmedia.tiktok && (
-        <li>
-          <Link to={socialmedia.tiktok} target='_blank' rel='noreferrer'>
-            <img src={LogoTikTok} alt='Icon WhatsApp' />
-          </Link>
-        </li>
-      )}
-    </ul>
+    <div className="socialmedia-container">
+      <h3>SÍGUENOS</h3>
+      <ul className='socialmedia-menu'>
+        {!!socialmedia.facebook && (
+          <li>
+            <Link to={socialmedia.facebook} target='_blank' rel='noreferrer'>
+              <img src={FacebookIcon} alt='Icon Facebook' />
+            </Link>
+          </li>
+        )}
+        {!!socialmedia.youtube && (
+          <li>
+            <Link to={socialmedia.youtube} target='_blank' rel='noreferrer'>
+              <img src={YoutubeIcon} alt='Icon YouTube' />
+            </Link>
+          </li>
+        )}
+        
+        {!!socialmedia.instagram && (
+          <li>
+            <Link to={socialmedia.instagram} target='_blank' rel='noreferrer'>
+              <img src={InstagramIcon} alt='Icon instagram' />
+            </Link>
+          </li>
+        )}
+        {!!socialmedia.tiktok && (
+          <li>
+            <Link to={socialmedia.tiktok} target='_blank' rel='noreferrer'>
+              <img src={LogoTikTok} alt='Icon WhatsApp' />
+            </Link>
+          </li>
+        )}
+      </ul>
+      <p><a href="#">Autorización para el uso y tratamiento de datos</a></p>
+    </div>
   );
 }
 /*

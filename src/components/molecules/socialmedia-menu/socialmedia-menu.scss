@@ -1,21 +1,36 @@
 @import "@/assets/scss/vars.scss";
 
-.socialmedia-menu{
+
+.socialmedia-container{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
     gap: 1em;
-    font-size: .9em;
 
-    img{
-        height: 2em;
-    }
-
-    a{
-        color: $gray;
+    h3{
         font-family: $font-secondary;
-        font-weight: 500;
     }
 
+    .socialmedia-menu{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        gap: 1em;
+        width: 12em;
+        font-size: .9em;
 
+        img{
+            height: 2em;
+        }
+
+        a{
+            color: $gray;
+            font-family: $font-secondary;
+            font-weight: 500;
+        }
+
+
+    }
 }
