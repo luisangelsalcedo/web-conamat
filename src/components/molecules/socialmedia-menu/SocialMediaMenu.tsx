@@ -63,7 +63,7 @@ export function SocialMediaMenu() {
           </li>
         )}
       </ul>
-      <p><a href="#">Autorización para el uso y tratamiento de datos</a></p>
+      <p><a href="https://conamat.edu.pe/terminos/Autorizacion_para_el_uso_y_tratamiento_de_datos.pdf" target='_blank'>Autorización para el uso y tratamiento de datos</a></p>
     </div>
   );
 }
