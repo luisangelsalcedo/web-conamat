@@ -1,7 +1,7 @@
 import {
-  LogoCesarVallejo,
+  //LogoCesarVallejo,
   //LogoMas60,
-  LogoAduni,
+  //LogoAduni,
   LogoUch,
   LogoCbb,
   LogoLumbreras,
@@ -18,8 +18,11 @@ export function Footer() {
     <footer className='footer'>
       <div className='footer-auspiciadores'>
         <div className='container'>
-          <h2>ORGANIZADO POR:</h2>
+          <h2>AUSPICIADORES:</h2>
           <ul>
+            
+            {
+              /*
             <li>
               <a
                 href='https://academiacesarvallejo.edu.pe/'
@@ -30,9 +33,6 @@ export function Footer() {
                 <img src={LogoCesarVallejo} />
               </a>
             </li>
-            {
-              /*
-              
             <li>
               <a
                 href='https://academiacesarvallejo.edu.pe/'
@@ -43,8 +43,6 @@ export function Footer() {
                 <img src={LogoMas60} alt='' />
               </a>
             </li>
-              */ 
-            }
             <li>
               <a
                 href='https://aduni.edu.pe/'
@@ -55,6 +53,9 @@ export function Footer() {
                 <img src={LogoAduni} />
               </a>
             </li>
+              */ 
+            }
+            
             <li>
               <a
                 href='https://www.uch.edu.pe/'
