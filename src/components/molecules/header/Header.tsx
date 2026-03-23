@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useMenuItem } from '@/store/hooks';
 import { Container, MainLogo } from '@/components/atoms';
-import { SocialMediaMenu } from '../socialmedia-menu/SocialMediaMenu';
 import { MainMenu } from '../main-menu/MainMenu';
+import { Organizado } from '../organizado/Organizado';
 import './header.scss';
 
 export function Header() {
@@ -16,7 +16,7 @@ export function Header() {
       <Container>
         <div className='header-top'>
           <MainLogo></MainLogo>
-          <SocialMediaMenu></SocialMediaMenu>
+          <Organizado></Organizado>
         </div>
         <MainMenu
           items={menuItems.menuWithSubmenu ?? []}

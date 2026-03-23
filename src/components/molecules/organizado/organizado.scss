@@ -1,0 +1,45 @@
+@import "@/assets/scss/vars.scss";
+
+.organizado{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1em;
+    padding: 1em 0 2em 0;
+
+    h3{
+        font-family: $font-secondary;
+        text-transform: uppercase;
+        font-size: .8em;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::before{
+            content: "";
+            position: absolute;
+            height: .1em;
+            width: 100%;
+            border-bottom: solid .1em $primary;
+        }
+
+        span{
+            position: relative;
+            z-index: 5;
+            display: block;
+            background-color: $bg-100;
+            padding: 0 1em;
+        }
+    }
+    ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5em;
+
+        svg{
+            height: 3em;
+        }
+    }
+}
